@@ -34,7 +34,7 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
     private ObjectsAdapter objectsAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     @BindView(R.id.no_objects_textview) TextView noObjectsTextview;
-    @BindView(R.id.edit_delete_textview) TextView editDeleteTextview;
+//    @BindView(R.id.edit_delete_textview) TextView editDeleteTextview;
 
 
     @Override
@@ -51,6 +51,7 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setTitle(getResources().getString(R.string.objectsTitle));
+        toolbar.setLogo(R.drawable.ic_launcher);
 
         initFab();
         initRecyclerView();
@@ -116,7 +117,7 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
     public void showObjects(List<AlarmObject> alarmObjects) {
         objectsAdapter.setAlarmObjects(alarmObjects);
         noObjectsTextview.setVisibility(View.INVISIBLE);
-        editDeleteTextview.setVisibility(View.VISIBLE);
+//        editDeleteTextview.setVisibility(View.VISIBLE);
         objectsRecyclerView.setVisibility(View.VISIBLE);
     }
 
@@ -133,7 +134,7 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
     @Override
     public void showNoObjectsText() {
         noObjectsTextview.setVisibility(View.VISIBLE);
-        editDeleteTextview.setVisibility(View.INVISIBLE);
+//        editDeleteTextview.setVisibility(View.INVISIBLE);
         objectsRecyclerView.setVisibility(View.INVISIBLE);
     }
 }
