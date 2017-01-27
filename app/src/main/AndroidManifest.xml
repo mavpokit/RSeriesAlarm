@@ -4,13 +4,14 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".objectlist.ObjectListActivity"
-            android:label="@string/objectListActivityName"
+            android:name=".objectlist.ObjectsActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,12 +21,13 @@
         </activity>
         <activity
             android:name=".addobject.AddObjectActivity"
+            android:configChanges="orientation|keyboardHidden"
             android:label="@string/title_activity_add_object"
-            android:parentActivityName=".objectlist.ObjectListActivity"
+            android:parentActivityName=".objectlist.ObjectsActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mavpokit.rseriesalarm.objectlist.ObjectListActivity" />
+                android:value="com.mavpokit.rseriesalarm.objectlist.ObjectsActivity" />
         </activity>
     </application>
 

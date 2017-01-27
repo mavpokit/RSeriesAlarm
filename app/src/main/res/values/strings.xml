@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">RSeriesAlarm</string>
+    <string name="app_name">R5 Alarm</string>
     <string name="action_settings">Settings</string>
-    <string name="objectListActivityName">Object list</string>
+    <string name="objectListActivityName">Alarm object list</string>
     <string name="title_activity_add_object">AddObjectActivity</string>
+    <string name="no_objects_text">No objects. To add object, press \"plus\" button</string>
+    <string name="edit_delete_text">To open edit/delete object menu, long tap on object</string>
+    <string name="objectsTitle">Alarm object list</string>
 </resources>
