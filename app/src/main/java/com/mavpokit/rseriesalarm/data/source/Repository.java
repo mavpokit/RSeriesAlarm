@@ -19,10 +19,10 @@ public class Repository implements IRepository {
     private Repository(){};
 
     static {
-        alarmObjects.add(new AlarmObject("Квартира Сырец","777","1234"));
-        alarmObjects.add(new AlarmObject("Гараж","777","1234"));
-        alarmObjects.add(new AlarmObject("Дача","888","2345"));
-        alarmObjects.add(new AlarmObject("Квартира Осокорки","888","2345"));
+//        alarmObjects.add(new AlarmObject("Квартира Сырец","777","1234"));
+//        alarmObjects.add(new AlarmObject("Гараж","777","1234"));
+//        alarmObjects.add(new AlarmObject("Дача","888","2345"));
+//        alarmObjects.add(new AlarmObject("Квартира Осокорки","888","2345"));
     }
 
     public static Repository getInstance() {

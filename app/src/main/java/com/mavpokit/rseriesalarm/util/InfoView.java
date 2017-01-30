@@ -2,6 +2,7 @@ package com.mavpokit.rseriesalarm.util;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.RelativeLayout;
@@ -13,7 +14,7 @@ import com.mavpokit.rseriesalarm.R;
  * Created by Alex on 27.01.2017.
  */
 
-public class InfoView extends RelativeLayout {
+public class InfoView extends CardView {
 
     private TextView infoTextView;
     private String message;

@@ -1,10 +1,8 @@
 package com.mavpokit.rseriesalarm.objectlist;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,13 +10,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.mavpokit.rseriesalarm.Consts;
 import com.mavpokit.rseriesalarm.Injection;
 import com.mavpokit.rseriesalarm.R;
 import com.mavpokit.rseriesalarm.addobject.AddObjectActivity;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
+import com.mavpokit.rseriesalarm.util.InfoView;
 import com.mavpokit.rseriesalarm.util.Logger;
 
 import java.util.List;
@@ -33,8 +31,8 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
     private RecyclerView objectsRecyclerView;
     private ObjectsAdapter objectsAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    @BindView(R.id.no_objects_textview) TextView noObjectsTextview;
-//    @BindView(R.id.edit_delete_textview) TextView editDeleteTextview;
+    @BindView(R.id.no_objects_infoview) InfoView noObjectsInfoview;
+    @BindView(R.id.edit_delete_infoview) InfoView editDeleteInfoview;
 
 
     @Override
@@ -116,8 +114,8 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
     @Override
     public void showObjects(List<AlarmObject> alarmObjects) {
         objectsAdapter.setAlarmObjects(alarmObjects);
-        noObjectsTextview.setVisibility(View.INVISIBLE);
-//        editDeleteTextview.setVisibility(View.VISIBLE);
+        noObjectsInfoview.setVisibility(View.INVISIBLE);
+        editDeleteInfoview.setVisibility(View.VISIBLE);
         objectsRecyclerView.setVisibility(View.VISIBLE);
     }
 
@@ -133,8 +131,8 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
 
     @Override
     public void showNoObjectsText() {
-        noObjectsTextview.setVisibility(View.VISIBLE);
-//        editDeleteTextview.setVisibility(View.INVISIBLE);
+        noObjectsInfoview.setVisibility(View.VISIBLE);
+        editDeleteInfoview.setVisibility(View.INVISIBLE);
         objectsRecyclerView.setVisibility(View.INVISIBLE);
     }
 }

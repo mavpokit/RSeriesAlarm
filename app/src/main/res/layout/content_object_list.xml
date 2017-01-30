@@ -18,64 +18,37 @@
         android:id="@+id/recycler_view_list_object"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="60dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="60dp"
         android:scrollbars="vertical" />
 
-    <TextView
-        android:id="@+id/no_objects_textview"
-        android:layout_width="wrap_content"
+
+    <com.mavpokit.rseriesalarm.util.InfoView
+        android:id="@+id/no_objects_infoview"
+        infoview:message="@string/no_objects_text"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="@string/no_objects_text" />
+        />
 
-    <android.support.v7.widget.CardView
-        app:cardCornerRadius="4dp"
+    <com.mavpokit.rseriesalarm.util.InfoView
+        android:id="@+id/edit_delete_infoview"
+        infoview:message="@string/edit_delete_text"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:cardElevation="2dp"
         android:layout_marginBottom="4dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <com.mavpokit.rseriesalarm.util.InfoView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-        </com.mavpokit.rseriesalarm.util.InfoView>
-
-    </android.support.v7.widget.CardView>
+        />
 
 </RelativeLayout>
 
-<!--<android.support.v7.widget.CardView-->
-<!--app:cardCornerRadius="4dp"-->
-<!--android:layout_alignParentBottom="true"-->
-<!--app:cardElevation="2dp"-->
-<!--android:layout_marginBottom="4dp"-->
-<!--android:layout_width="230dp"-->
-<!--android:layout_height="wrap_content">-->
+    <!--<android.support.v7.widget.CardView--><!--app:cardCornerRadius="4dp"--><!--android:layout_alignParentBottom="true"--><!--app:cardElevation="2dp"--><!--android:layout_marginBottom="4dp"--><!--android:layout_width="230dp"--><!--android:layout_height="wrap_content">-->
 
-<!--<RelativeLayout-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content">-->
-    <!--<ImageView-->
-        <!--android:id="@+id/info_imageview"-->
-        <!--android:layout_centerVertical="true"-->
-        <!--android:layout_width="30dp"-->
-        <!--android:layout_height="30dp"-->
-        <!--android:src="@android:drawable/ic_dialog_info"/>-->
-    <!--<TextView-->
-        <!--android:id="@+id/edit_delete_textview"-->
-        <!--android:layout_centerVertical="true"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginLeft="5dp"-->
-        <!--android:layout_toRightOf="@id/info_imageview"-->
-        <!--android:text="@string/edit_delete_text" />-->
+    <!--<RelativeLayout--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content">--><!--<ImageView--><!--android:id="@+id/info_imageview"--><!--android:layout_centerVertical="true"--><!--android:layout_width="30dp"--><!--android:layout_height="30dp"--><!--android:src="@android:drawable/ic_dialog_info"/>--><!--<TextView--><!--android:id="@+id/edit_delete_textview"--><!--android:layout_centerVertical="true"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:layout_marginLeft="5dp"--><!--android:layout_toRightOf="@id/info_imageview"--><!--android:text="@string/edit_delete_text" />-->
 
-<!--</RelativeLayout>-->
+    <!--</RelativeLayout>-->
 
 
-<!--</android.support.v7.widget.CardView>-->
+    <!--</android.support.v7.widget.CardView>-->
 
