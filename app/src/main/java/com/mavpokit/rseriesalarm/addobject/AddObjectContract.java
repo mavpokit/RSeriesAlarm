@@ -9,6 +9,6 @@ public interface AddObjectContract {
         void closeAndSetResultOk();
     }
     interface Presenter{
-        void addObject();
+        void doneClick(String name, String number, String password);
     }
 }

@@ -32,7 +32,7 @@ public class ObjectsPresenter implements ObjectsContract.Presenter {
     @Override
     public void onActivityResult(int requestCode, int resultCode) {
 
-        if (requestCode==Consts.REQUEST_CODE_ADD_OBJECT && requestCode== Consts.RESULT_OK_ADD_OBJECT)
+        if (requestCode==Consts.REQUEST_CODE_ADD_OBJECT && resultCode== Consts.RESULT_OK_ADD_OBJECT)
         {
             List<AlarmObject> alarmObjects = repository.getObjects();
             view.showObjects(alarmObjects);

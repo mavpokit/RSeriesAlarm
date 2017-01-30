@@ -2,8 +2,10 @@
 <resources>
     <color name="colorPrimary">#607D8B</color>
     <color name="colorPrimaryDark">#37474F</color>
-    <color name="colorAccent">#FF9800</color>
-    <color name="colorButton">#009688</color>
+    <color name="colorPrimaryLight">#7737474F</color>
+    <color name="colorAccent">#d10209</color>
+    <color name="colorAccentSecondary">#009688</color>
+    <color name="colorAccentSecondaryLight">#44009688</color>
     <color name="colorLight">#FFFFFFFF</color>
     <color name="yellow">#FFFF00</color>
 </resources>

@@ -1,5 +1,6 @@
 package com.mavpokit.rseriesalarm.addobject;
 
+import com.mavpokit.rseriesalarm.data.model.AlarmObject;
 import com.mavpokit.rseriesalarm.data.source.IRepository;
 
 /**
@@ -19,7 +20,9 @@ public class AddObjectPresenter implements AddObjectContract.Presenter {
 
 
     @Override
-    public void addObject() {
+    public void doneClick(String name, String number, String password) {
+        repository.addObject(new AlarmObject(name,number,password));
+
         view.closeAndSetResultOk();
 
     }

@@ -1,12 +1,14 @@
 package com.mavpokit.rseriesalarm.objectlist;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -48,8 +50,8 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
         ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setTitle(getResources().getString(R.string.objectsTitle));
-        toolbar.setLogo(R.drawable.ic_launcher);
+        setLogo(toolbar);
+
 
         initFab();
         initRecyclerView();
@@ -58,6 +60,13 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
         presenter.onCreate();
 
         Logger.log("---ObjectsActivity---: ","onCreate");
+    }
+
+    private void setLogo(Toolbar toolbar) {
+        if (Build.VERSION.SDK_INT>=21)
+            toolbar.setLogo(R.drawable.ic_launcher);
+        else
+            toolbar.setLogo(R.mipmap.ic_launcher);
     }
 
     private void initFab() {
@@ -72,6 +81,7 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         presenter.onActivityResult(requestCode,resultCode);
+        Logger.log("---ObjectsActivity---: ","onActivityResult");
 
     }
 
