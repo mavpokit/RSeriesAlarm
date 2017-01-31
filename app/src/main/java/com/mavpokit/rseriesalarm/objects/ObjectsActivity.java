@@ -1,4 +1,4 @@
-package com.mavpokit.rseriesalarm.objectlist;
+package com.mavpokit.rseriesalarm.objects;
 
 import android.content.Intent;
 import android.os.Build;
@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -56,7 +55,7 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
         initFab();
         initRecyclerView();
 
-        presenter = new ObjectsPresenter(this,Injection.provideRepository());
+        presenter = new ObjectsPresenter(this,Injection.provideRepository(getApplicationContext()));
         presenter.onCreate();
 
         Logger.log("---ObjectsActivity---: ","onCreate");

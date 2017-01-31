@@ -12,6 +12,6 @@ public interface IRepository {
     List<AlarmObject> getObjects();
     void addObject(AlarmObject alarmObject);
     void editObject();
-    void deleteObject();
+    void deleteObject(String id);
 
 }

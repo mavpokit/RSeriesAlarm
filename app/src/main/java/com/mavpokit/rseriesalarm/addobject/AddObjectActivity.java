@@ -34,7 +34,7 @@ public class AddObjectActivity extends AppCompatActivity implements AddObjectCon
 
         initFab();
 
-        presenter = new AddObjectPresenter(this, Injection.provideRepository());
+        presenter = new AddObjectPresenter(this, Injection.provideRepository(getApplicationContext()));
     }
 
     private void setLogo(Toolbar toolbar) {

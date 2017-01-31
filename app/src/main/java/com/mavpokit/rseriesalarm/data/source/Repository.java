@@ -13,10 +13,15 @@ import java.util.List;
  */
 
 public class Repository implements IRepository {
+
+    private IRepository sqliteDatasource;
+
     private static Repository instance;
     private static List<AlarmObject> alarmObjects = new ArrayList<>();
 
-    private Repository(){};
+    private Repository(IRepository sqliteDatasource){
+        this.sqliteDatasource = sqliteDatasource;
+    };
 
     static {
 //        alarmObjects.add(new AlarmObject("Квартира Сырец","777","1234"));
@@ -25,18 +30,17 @@ public class Repository implements IRepository {
 //        alarmObjects.add(new AlarmObject("Квартира Осокорки","888","2345"));
     }
 
-    public static Repository getInstance() {
-        if (instance==null) instance=new Repository();
+    public static Repository getInstance(IRepository sqliteDatasource) {
+        if (instance==null) instance=new Repository(sqliteDatasource);
         return instance;
     }
 
     @Override
     public List<AlarmObject> getObjects() {
-
-        Logger.log("-----repository-----: ","loading objects...");
-        delay(2000);
-
-        return alarmObjects;
+        return sqliteDatasource.getObjects();
+//        Logger.log("-----repository-----: ","loading objects...");
+//        delay(2000);
+//        return alarmObjects;
     }
 
     private void delay(int ms) {
@@ -49,7 +53,7 @@ public class Repository implements IRepository {
 
     @Override
     public void addObject(AlarmObject alarmObject) {
-        alarmObjects.add(alarmObject);
+        sqliteDatasource.addObject(alarmObject);
     }
 
     @Override
@@ -58,7 +62,7 @@ public class Repository implements IRepository {
     }
 
     @Override
-    public void deleteObject() {
-
+    public void deleteObject(String id) {
+        sqliteDatasource.deleteObject(id);
     }
 }

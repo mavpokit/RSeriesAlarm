@@ -1,4 +1,6 @@
 ext{
     supportVersion = '25.1.0'
+    butterknifeVersion = '8.2.1'
+    guavaVersion = '18.0'
 
 }

@@ -1,4 +1,4 @@
-package com.mavpokit.rseriesalarm.objectlist;
+package com.mavpokit.rseriesalarm.objects;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

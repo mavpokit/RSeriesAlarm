@@ -1,4 +1,4 @@
-package com.mavpokit.rseriesalarm.objectlist;
+package com.mavpokit.rseriesalarm.objects;
 
 import com.mavpokit.rseriesalarm.Consts;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;

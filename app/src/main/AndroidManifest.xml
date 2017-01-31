@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".objectlist.ObjectsActivity"
+            android:name=".objects.ObjectsActivity"
             android:configChanges="orientation|keyboardHidden"
             android:launchMode="singleTop"
             android:label="@string/objectsTitle"
@@ -24,12 +24,12 @@
             android:name=".addobject.AddObjectActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/title_activity_add_object"
-            android:parentActivityName=".objectlist.ObjectsActivity"
+            android:parentActivityName=".objects.ObjectsActivity"
             android:windowSoftInputMode="adjustResize"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mavpokit.rseriesalarm.objectlist.ObjectsActivity" />
+                android:value="com.mavpokit.rseriesalarm.objects.ObjectsActivity" />
         </activity>
     </application>
 

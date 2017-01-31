@@ -21,7 +21,7 @@ public class AddObjectPresenter implements AddObjectContract.Presenter {
 
     @Override
     public void doneClick(String name, String number, String password) {
-        repository.addObject(new AlarmObject(name,number,password));
+        repository.addObject(new AlarmObject(null,name,number,password));
 
         view.closeAndSetResultOk();
 

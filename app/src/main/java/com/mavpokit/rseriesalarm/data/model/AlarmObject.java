@@ -5,15 +5,21 @@ package com.mavpokit.rseriesalarm.data.model;
  */
 
 public class AlarmObject {
+    private String id;
     private String name;
     private String number;
     private String code;
 
-    public AlarmObject(String name, String number, String code) {
+    public AlarmObject(String id, String name, String number, String code) {
+        this.id = id;
         this.name = name;
         this.number = number;
         this.code = code;
     }
+
+    public String getId() {return id;}
+
+    public void setId(String id) {this.id = id;}
 
     public String getName() {
         return name;
