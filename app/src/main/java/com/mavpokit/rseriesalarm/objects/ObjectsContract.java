@@ -14,10 +14,13 @@ public interface ObjectsContract {
         void runAddObjectView();
         void openObject();
         void showNoObjectsText();
+        void showEditDeleteDialog(AlarmObject object);
 
     }
     interface Presenter{
         void onCreate();
         void onActivityResult(int requestCode, int resultCode);
+        void onObjectClick(AlarmObject object);
+        void onDialogResult(int resultCode, AlarmObject object);
     }
 }

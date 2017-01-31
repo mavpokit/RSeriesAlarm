@@ -93,7 +93,7 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
         objectsRecyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
-        objectsAdapter = new ObjectsAdapter();
+        objectsAdapter = new ObjectsAdapter(object -> presenter.onObjectClick(object));
         objectsRecyclerView.setAdapter(objectsAdapter);
     }
 
@@ -143,5 +143,16 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
         noObjectsInfoview.setVisibility(View.VISIBLE);
         editDeleteInfoview.setVisibility(View.INVISIBLE);
         objectsRecyclerView.setVisibility(View.INVISIBLE);
+    }
+
+    @Override
+    public void showEditDeleteDialog(AlarmObject object) {
+        EditDeleteDialog dialog = new EditDeleteDialog();
+        //object name is title of dialog
+        Bundle bundle = new Bundle();
+        bundle.putString(Consts.NAME, object.getName());
+        dialog.setArguments(bundle);
+        dialog.setListener(resultCode -> presenter.onDialogResult(resultCode,object));
+        dialog.show(getSupportFragmentManager(),"EditDeleteDialog");
     }
 }

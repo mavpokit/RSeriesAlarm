@@ -18,6 +18,8 @@ import java.util.List;
 
 public class ObjectsAdapter extends RecyclerView.Adapter<ObjectsAdapter.ViewHolder> {
     private List<AlarmObject> alarmObjects = new ArrayList<>();
+    private ObjectClickListener objectClickListener;
+
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -32,7 +34,8 @@ public class ObjectsAdapter extends RecyclerView.Adapter<ObjectsAdapter.ViewHold
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public ObjectsAdapter() {
+    public ObjectsAdapter(ObjectClickListener objectClickListener) {
+        this.objectClickListener=objectClickListener;
     }
 
     public void setAlarmObjects(List<AlarmObject> alarmObjects) {
@@ -64,6 +67,11 @@ public class ObjectsAdapter extends RecyclerView.Adapter<ObjectsAdapter.ViewHold
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.objectNameTextView.setText(alarmObjects.get(position).getName());
+        holder.itemView.setOnLongClickListener(v ->
+        {
+            objectClickListener.onObjectClick(alarmObjects.get(position));
+            return true;
+        });
 
     }
 
@@ -71,5 +79,9 @@ public class ObjectsAdapter extends RecyclerView.Adapter<ObjectsAdapter.ViewHold
     @Override
     public int getItemCount() {
         return alarmObjects.size();
+    }
+
+    public interface ObjectClickListener{
+        void onObjectClick(AlarmObject object);
     }
 }

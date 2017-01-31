@@ -9,4 +9,8 @@
     <string name="object_name">Object Name</string>
     <string name="device_number">Device number</string>
     <string name="device_password">Device Password</string>
+    <string name="edit_delete_dialog_message">Make your choise</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">cancel</string>
 </resources>

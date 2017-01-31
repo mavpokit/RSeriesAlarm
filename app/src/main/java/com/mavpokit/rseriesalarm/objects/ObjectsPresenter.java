@@ -32,16 +32,41 @@ public class ObjectsPresenter implements ObjectsContract.Presenter {
     @Override
     public void onActivityResult(int requestCode, int resultCode) {
 
-        if (requestCode==Consts.REQUEST_CODE_ADD_OBJECT && resultCode== Consts.RESULT_OK_ADD_OBJECT)
-        {
+        if (requestCode == Consts.REQUEST_CODE_ADD_OBJECT && resultCode == Consts.RESULT_OK_ADD_OBJECT) {
             List<AlarmObject> alarmObjects = repository.getObjects();
             view.showObjects(alarmObjects);
         }
 
     }
 
+    @Override
+    public void onObjectClick(AlarmObject object) {
+        view.showEditDeleteDialog(object);
+    }
+
+    @Override
+    public void onDialogResult(int resultCode, AlarmObject object) {
+        switch (resultCode) {
+            case Consts.BTN_EDIT: {
+//                view.
+                List<AlarmObject> alarmObjects = repository.getObjects();
+                view.showObjects(alarmObjects);
+                break;
+            }
+            case Consts.BTN_DELETE: {
+                repository.deleteObject(object.getId());
+                List<AlarmObject> alarmObjects = repository.getObjects();
+                if (alarmObjects.size() > 0)
+                    view.showObjects(alarmObjects);
+                else
+                    view.showNoObjectsText();
+                break;
+            }
+        }
+    }
+
     private boolean isListNotEmpty(List<AlarmObject> alarmObjects) {
-        return alarmObjects!= null && alarmObjects.size()>0;
+        return alarmObjects != null && alarmObjects.size() > 0;
     }
 
 }
