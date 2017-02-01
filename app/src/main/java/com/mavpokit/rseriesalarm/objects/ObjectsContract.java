@@ -12,7 +12,7 @@ public interface ObjectsContract {
     interface View{
         void showObjects(List<AlarmObject> alarmObjects);
         void runAddObjectView();
-        void openObject();
+        void openObject(AlarmObject object);
         void showNoObjectsText();
         void showEditDeleteDialog(AlarmObject object);
 
@@ -21,6 +21,7 @@ public interface ObjectsContract {
         void onCreate();
         void onActivityResult(int requestCode, int resultCode);
         void onObjectClick(AlarmObject object);
+        void onObjectLongClick(AlarmObject object);
         void onDialogResult(int resultCode, AlarmObject object);
     }
 }

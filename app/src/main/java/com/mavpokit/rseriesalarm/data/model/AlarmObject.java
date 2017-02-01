@@ -1,10 +1,12 @@
 package com.mavpokit.rseriesalarm.data.model;
 
+import java.io.Serializable;
+
 /**
  * Created by Alex on 24.01.2017.
  */
 
-public class AlarmObject {
+public class AlarmObject implements Serializable {
     private String id;
     private String name;
     private String number;
@@ -44,4 +46,6 @@ public class AlarmObject {
     public void setCode(String code) {
         this.code = code;
     }
+
+
 }

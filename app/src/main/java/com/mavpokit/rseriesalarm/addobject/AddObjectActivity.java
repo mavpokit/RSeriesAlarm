@@ -27,7 +27,7 @@ public class AddObjectActivity extends AppCompatActivity implements AddObjectCon
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_object);
         ButterKnife.bind(this);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_activity_add_object);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setLogo(toolbar);

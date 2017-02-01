@@ -10,5 +10,9 @@ public interface Consts {
     int BTN_EDIT=1;
     int BTN_DELETE=2;
     String NAME = "NAME";
+    String NUMBER = "NUMBER";
+    String CODE = "CODE";
+    String ALARM_OBJECT = "ALARM_OBJECT";
+
 
 }

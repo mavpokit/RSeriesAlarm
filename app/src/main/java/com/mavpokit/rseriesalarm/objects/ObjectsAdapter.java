@@ -19,6 +19,7 @@ import java.util.List;
 public class ObjectsAdapter extends RecyclerView.Adapter<ObjectsAdapter.ViewHolder> {
     private List<AlarmObject> alarmObjects = new ArrayList<>();
     private ObjectClickListener objectClickListener;
+    private ObjectLongClickListener objectLongClickListener;
 
 
     // Provide a reference to the views for each data item
@@ -34,8 +35,9 @@ public class ObjectsAdapter extends RecyclerView.Adapter<ObjectsAdapter.ViewHold
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public ObjectsAdapter(ObjectClickListener objectClickListener) {
-        this.objectClickListener=objectClickListener;
+    public ObjectsAdapter(ObjectClickListener objectClickListener, ObjectLongClickListener objectLongClickListener) {
+        this.objectClickListener = objectClickListener;
+        this.objectLongClickListener = objectLongClickListener;
     }
 
     public void setAlarmObjects(List<AlarmObject> alarmObjects) {
@@ -67,9 +69,11 @@ public class ObjectsAdapter extends RecyclerView.Adapter<ObjectsAdapter.ViewHold
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.objectNameTextView.setText(alarmObjects.get(position).getName());
+        holder.itemView.setOnClickListener(v ->
+        { objectClickListener.onObjectClick(alarmObjects.get(position)); });
         holder.itemView.setOnLongClickListener(v ->
         {
-            objectClickListener.onObjectClick(alarmObjects.get(position));
+            objectLongClickListener.onObjectLongClick(alarmObjects.get(position));
             return true;
         });
 
@@ -81,7 +85,10 @@ public class ObjectsAdapter extends RecyclerView.Adapter<ObjectsAdapter.ViewHold
         return alarmObjects.size();
     }
 
-    public interface ObjectClickListener{
+    public interface ObjectClickListener {
         void onObjectClick(AlarmObject object);
+    }
+    public interface ObjectLongClickListener {
+        void onObjectLongClick(AlarmObject object);
     }
 }

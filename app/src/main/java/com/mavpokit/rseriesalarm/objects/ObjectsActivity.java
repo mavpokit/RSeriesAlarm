@@ -16,6 +16,7 @@ import com.mavpokit.rseriesalarm.Consts;
 import com.mavpokit.rseriesalarm.Injection;
 import com.mavpokit.rseriesalarm.R;
 import com.mavpokit.rseriesalarm.addobject.AddObjectActivity;
+import com.mavpokit.rseriesalarm.control.ControlActivity;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
 import com.mavpokit.rseriesalarm.util.InfoView;
 import com.mavpokit.rseriesalarm.util.Logger;
@@ -45,9 +46,9 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_object_list);
+        setContentView(R.layout.activity_objects);
         ButterKnife.bind(this);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_activity_objects);
         setSupportActionBar(toolbar);
         setLogo(toolbar);
 
@@ -93,7 +94,9 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
         objectsRecyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
-        objectsAdapter = new ObjectsAdapter(object -> presenter.onObjectClick(object));
+        objectsAdapter = new ObjectsAdapter(
+                object -> presenter.onObjectClick(object),
+                object -> presenter.onObjectLongClick(object));
         objectsRecyclerView.setAdapter(objectsAdapter);
     }
 
@@ -134,8 +137,12 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
     }
 
     @Override
-    public void openObject() {
-
+    public void openObject(AlarmObject object) {
+        Intent intent = new Intent(this, ControlActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(Consts.ALARM_OBJECT,object);
+        intent.putExtra(Consts.ALARM_OBJECT,object);
+        startActivity(intent);
     }
 
     @Override

@@ -41,6 +41,11 @@ public class ObjectsPresenter implements ObjectsContract.Presenter {
 
     @Override
     public void onObjectClick(AlarmObject object) {
+        view.openObject(object);
+    }
+
+    @Override
+    public void onObjectLongClick(AlarmObject object) {
         view.showEditDeleteDialog(object);
     }
 
