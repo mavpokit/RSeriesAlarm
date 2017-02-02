@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mavpokit.rseriesalarm">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,18 +13,19 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".objects.ObjectsActivity"
-            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
             android:label="@string/objectsTitle"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".addobject.AddObjectActivity"
-            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_add_object"
             android:parentActivityName=".objects.ObjectsActivity"
             android:theme="@style/AppTheme.NoActionBar"
@@ -33,9 +37,17 @@
 
         <activity
             android:name=".control.ControlActivity"
+            android:screenOrientation="portrait"
             android:parentActivityName=".objects.ObjectsActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <activity
+            android:name=".settings.SettingsActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".control.ControlActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
     </application>
 
 </manifest>

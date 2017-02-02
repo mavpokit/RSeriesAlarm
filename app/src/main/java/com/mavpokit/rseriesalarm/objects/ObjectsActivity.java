@@ -139,8 +139,6 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
     @Override
     public void openObject(AlarmObject object) {
         Intent intent = new Intent(this, ControlActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putSerializable(Consts.ALARM_OBJECT,object);
         intent.putExtra(Consts.ALARM_OBJECT,object);
         startActivity(intent);
     }

@@ -15,4 +15,6 @@
     <string name="cancel">cancel</string>
     <string name="arm">Arm</string>
     <string name="disarm">Disarm</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>
