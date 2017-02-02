@@ -52,18 +52,21 @@ public class ControlActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_control);
         ButterKnife.bind(this);
+
+        alarmObject = (AlarmObject) getIntent().getSerializableExtra(Consts.ALARM_OBJECT);
+
+        setupToolbar();
+
+    }
+
+    private void setupToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_activity_control);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setLogo(toolbar);
-
-        alarmObject = (AlarmObject) getIntent().getSerializableExtra(Consts.ALARM_OBJECT);
         checkNotNull(alarmObject);
         getSupportActionBar().setTitle(alarmObject.getName());
-
     }
-
-
 
     private void setLogo(Toolbar toolbar) {
         if (Build.VERSION.SDK_INT >= 21)

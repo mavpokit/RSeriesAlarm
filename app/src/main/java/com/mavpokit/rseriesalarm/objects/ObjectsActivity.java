@@ -48,10 +48,8 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_objects);
         ButterKnife.bind(this);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_activity_objects);
-        setSupportActionBar(toolbar);
-        setLogo(toolbar);
 
+        setupToolbar();
 
         initFab();
         initRecyclerView();
@@ -60,6 +58,12 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
         presenter.onCreate();
 
         Logger.log("---ObjectsActivity---: ","onCreate");
+    }
+
+    private void setupToolbar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_activity_objects);
+        setSupportActionBar(toolbar);
+        setLogo(toolbar);
     }
 
     private void setLogo(Toolbar toolbar) {
