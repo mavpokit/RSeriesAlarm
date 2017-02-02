@@ -3,6 +3,7 @@ package com.mavpokit.rseriesalarm.control;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 
 import com.mavpokit.rseriesalarm.Consts;
@@ -10,6 +11,9 @@ import com.mavpokit.rseriesalarm.R;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
 
 public class ControlActivity extends AppCompatActivity {
+    static {
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
+    }
 
     AlarmObject alarmObject;
 
@@ -19,6 +23,7 @@ public class ControlActivity extends AppCompatActivity {
         setContentView(R.layout.activity_control);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_activity_control);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setLogo(toolbar);
 
         alarmObject = (AlarmObject) getIntent().getSerializableExtra(Consts.ALARM_OBJECT);

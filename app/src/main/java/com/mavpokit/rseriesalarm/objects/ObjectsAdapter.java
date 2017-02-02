@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.mavpokit.rseriesalarm.R;
@@ -69,9 +70,9 @@ public class ObjectsAdapter extends RecyclerView.Adapter<ObjectsAdapter.ViewHold
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.objectNameTextView.setText(alarmObjects.get(position).getName());
-        holder.itemView.setOnClickListener(v ->
+        holder.objectNameTextView.setOnClickListener(v ->
         { objectClickListener.onObjectClick(alarmObjects.get(position)); });
-        holder.itemView.setOnLongClickListener(v ->
+        holder.objectNameTextView.setOnLongClickListener(v ->
         {
             objectLongClickListener.onObjectLongClick(alarmObjects.get(position));
             return true;

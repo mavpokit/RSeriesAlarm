@@ -1,5 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.mavpokit.rseriesalarm.control.ControlActivity"
+    tools:showIn="@layout/activity_control">
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.CardView
+            android:layout_margin="5dp"
+            android:elevation="7dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="5dp"
+
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_button"
+                android:drawableTop="@drawable/ic_lock_wrapped"
+                android:padding="10dp"
+                android:text="@string/arm"
+                android:textColor="@color/colorLight" />
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_margin="5dp"
+            android:elevation="7dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="5dp"
+
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp">
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_button"
+                android:drawableTop="@drawable/ic_unlock_wrapped"
+                android:padding="10dp"
+                android:text="@string/disarm"
+                android:textColor="@color/colorLight" />
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/custom_button"
+            android:drawableLeft="@drawable/ic_request_wrapped"
+            android:paddingLeft="20dp"
+            android:text="Request status"
+            android:textColor="@color/colorLight" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/custom_button"
+            android:drawableLeft="@drawable/ic_call_wrapped"
+            android:paddingLeft="20dp"
+            android:text="Make call"
+            android:textColor="@color/colorLight" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/custom_button"
+            android:drawableLeft="@drawable/ic_settings_wrapped"
+            android:paddingLeft="20dp"
+            android:text="Settings"
+            android:textColor="@color/colorLight" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -35,7 +35,7 @@
     <com.mavpokit.rseriesalarm.util.InfoView
         android:id="@+id/edit_delete_infoview"
         infoview:message="@string/edit_delete_text"
-        android:layout_width="230dp"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="4dp"

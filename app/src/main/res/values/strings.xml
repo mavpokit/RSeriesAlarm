@@ -4,7 +4,7 @@
     <string name="objectListActivityName">Alarm object list</string>
     <string name="title_activity_add_object">Add Alarm Object</string>
     <string name="no_objects_text">No objects. To add object, press \"plus\" button</string>
-    <string name="edit_delete_text">To open edit/delete object menu, long tap on object</string>
+    <string name="edit_delete_text">To open edit/delete object dialog, long tap on object</string>
     <string name="objectsTitle">Alarm object list</string>
     <string name="object_name">Object Name</string>
     <string name="device_number">Device number</string>
@@ -13,4 +13,6 @@
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
     <string name="cancel">cancel</string>
+    <string name="arm">Arm</string>
+    <string name="disarm">Disarm</string>
 </resources>

@@ -19,7 +19,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".addobject.AddObjectActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -36,7 +35,6 @@
             android:name=".control.ControlActivity"
             android:parentActivityName=".objects.ObjectsActivity"
             android:theme="@style/AppTheme.NoActionBar">
-
         </activity>
     </application>
 
