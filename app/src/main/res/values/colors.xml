@@ -9,4 +9,7 @@
     <color name="colorAccentSecondaryDark">#005e55</color>
     <color name="colorLight">#FFFFFFFF</color>
     <color name="yellow">#FFFF00</color>
+    <color name="inactiveTab">#b8e6d5</color>
+    <color name="selectedTab">#FFFFFF</color>
+    <color name="indicator">#FFFFFF</color>
 </resources>

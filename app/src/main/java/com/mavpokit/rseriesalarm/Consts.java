@@ -13,6 +13,9 @@ public interface Consts {
     String NUMBER = "NUMBER";
     String CODE = "CODE";
     String ALARM_OBJECT = "ALARM_OBJECT";
+    int SEND_SMS_REQUSET_CODE = 77;
+    String MY_SHARED_PREFS = "MY_SHARED_PREFS";
+    String NEVER_ASK_AGAIN = "NEVER_ASK_AGAIN";
 
 
 }
