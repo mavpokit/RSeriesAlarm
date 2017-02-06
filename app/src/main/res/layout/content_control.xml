@@ -100,14 +100,14 @@
             android:textColor="@color/colorLight" />
 
         <Button
-            android:id="@+id/settings_button"
+            android:id="@+id/setup_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="@drawable/custom_button"
             android:drawableLeft="@drawable/ic_settings_wrapped"
             android:paddingLeft="20dp"
-            android:text="Settings"
+            android:text="@string/setup"
             android:textColor="@color/colorLight" />
     </LinearLayout>
 

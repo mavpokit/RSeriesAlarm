@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.mavpokit.rseriesalarm.AboutDialog;
 import com.mavpokit.rseriesalarm.Consts;
 import com.mavpokit.rseriesalarm.Injection;
 import com.mavpokit.rseriesalarm.R;
@@ -120,12 +121,14 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_about) {
+            (new AboutDialog()).show(getSupportFragmentManager(),"AboutDialog");
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
 
     @Override
     public void showObjects(List<AlarmObject> alarmObjects) {

@@ -1,31 +1,22 @@
 package com.mavpokit.rseriesalarm.control;
 
 import android.Manifest;
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
-import android.provider.Settings;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
-import android.telephony.SmsManager;
-import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mavpokit.rseriesalarm.Consts;
 import com.mavpokit.rseriesalarm.R;
-import com.mavpokit.rseriesalarm.addobject.AddObjectContract;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
 import com.mavpokit.rseriesalarm.settings.SettingsActivity;
 import com.mavpokit.rseriesalarm.util.MySmsManager;
@@ -35,9 +26,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-import static com.mavpokit.rseriesalarm.Consts.MY_SHARED_PREFS;
-import static com.mavpokit.rseriesalarm.Consts.NEVER_ASK_AGAIN;
-import static com.mavpokit.rseriesalarm.Consts.SEND_SMS_REQUSET_CODE;
 
 public class ControlActivity extends AppCompatActivity {
     static {
@@ -52,7 +40,7 @@ public class ControlActivity extends AppCompatActivity {
     Button statusButton;
     @BindView(R.id.call_button)
     Button callButton;
-    @BindView(R.id.settings_button)
+    @BindView(R.id.setup_button)
     Button settingsButton;
 
     AlarmObject alarmObject;
@@ -127,7 +115,7 @@ public class ControlActivity extends AppCompatActivity {
 
     }
 
-    @OnClick(R.id.settings_button)
+    @OnClick(R.id.setup_button)
     void settingsButtonClick() {
         Intent intent = new Intent(this, SettingsActivity.class);
         intent.putExtra(Consts.ALARM_OBJECT, alarmObject);
@@ -146,4 +134,27 @@ public class ControlActivity extends AppCompatActivity {
                                            String permissions[], int[] grantResults) {
         MySmsManager.onRequestPermissionsResult(requestCode,permissions,grantResults);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_control, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_about) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 }
