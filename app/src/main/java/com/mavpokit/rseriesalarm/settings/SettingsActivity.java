@@ -4,29 +4,23 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Build;
 import android.support.design.widget.TabLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mavpokit.rseriesalarm.Consts;
 import com.mavpokit.rseriesalarm.R;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
-import com.mavpokit.rseriesalarm.settings.fragments.OtherSettingsFragment;
+import com.mavpokit.rseriesalarm.settings.fragments.SetupOtherFragment;
 import com.mavpokit.rseriesalarm.settings.fragments.SetupDelaysFragment;
 import com.mavpokit.rseriesalarm.settings.fragments.SetupNumbersFragment;
 import com.mavpokit.rseriesalarm.settings.fragments.SetupPasswordFragment;
@@ -60,7 +54,7 @@ public class SettingsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_activity_settings);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        setLogo(toolbar);
+//        setLogo(toolbar);
         getSupportActionBar().setTitle(alarmObject.getName());
     }
 
@@ -112,12 +106,12 @@ public class SettingsActivity extends AppCompatActivity {
                 R.drawable.tab_icon_other};
 
         final String[] TAB_NAMES = new String[]{
-                "Animated\nmarkers",
-                "Window\nTransitions",
-                "Transitions\nFramework",
-                "Property\nanimation",
-                "Layout\nTransitions",
-                "Gif\nanimation" };
+                "Setup password",
+                "Setup numbers",
+                "Setup zones",
+                "Setup delays",
+                "Setup siren",
+                "Miscellaneous" };
 
         //set icons and color them with inactivetab color
         for (int i=0;i<tabLayout.getTabCount();i++){
@@ -127,13 +121,14 @@ public class SettingsActivity extends AppCompatActivity {
 
         //mark first tab icon with color at startup
         tabLayout.getTabAt(0).getIcon().setColorFilter(getResources().getColor(R.color.selectedTab), PorterDuff.Mode.SRC_IN);
-        setTitle(TAB_NAMES[0]);
+        getSupportActionBar().setTitle(TAB_NAMES[0]);
 
         //for toolabar title change when scrolling tabs
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
-                setTitle(TAB_NAMES[position]);
+                Toast.makeText(SettingsActivity.this,String.valueOf(position),Toast.LENGTH_SHORT).show();
+                getSupportActionBar().setTitle(TAB_NAMES[position]);
             }
             @Override public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
             @Override public void onPageScrollStateChanged(int state) {}
@@ -165,7 +160,7 @@ public class SettingsActivity extends AppCompatActivity {
                     SetupZonesFragment.newInstance(alarmObject.getNumber()),
                     SetupDelaysFragment.newInstance(alarmObject.getNumber()),
                     SetupSirenFragment.newInstance(alarmObject.getNumber()),
-                    OtherSettingsFragment.newInstance(alarmObject.getNumber())};
+                    SetupOtherFragment.newInstance(alarmObject.getNumber())};
 
 
             private static final String TAG = "-----PagerAdapter-----";

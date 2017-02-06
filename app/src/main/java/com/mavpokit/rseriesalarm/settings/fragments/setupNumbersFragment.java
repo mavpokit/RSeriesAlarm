@@ -9,10 +9,20 @@ import android.view.ViewGroup;
 
 import com.mavpokit.rseriesalarm.R;
 
+import static com.mavpokit.rseriesalarm.Consts.NUMBER;
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public class SetupNumbersFragment extends BaseSettingsFragment {
+
+    public static BaseSettingsFragment newInstance(String smsNumber) {
+        BaseSettingsFragment fragment = new SetupNumbersFragment();
+        Bundle args = new Bundle();
+        args.putString(NUMBER, smsNumber);
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

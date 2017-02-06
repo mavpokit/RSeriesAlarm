@@ -10,7 +10,17 @@ import android.view.ViewGroup;
 
 import com.mavpokit.rseriesalarm.R;
 
+import static com.mavpokit.rseriesalarm.Consts.NUMBER;
+
 public class SetupZonesFragment extends BaseSettingsFragment {
+
+    public static BaseSettingsFragment newInstance(String smsNumber) {
+        BaseSettingsFragment fragment = new SetupZonesFragment();
+        Bundle args = new Bundle();
+        args.putString(NUMBER, smsNumber);
+        fragment.setArguments(args);
+        return fragment;
+    }
 
    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
