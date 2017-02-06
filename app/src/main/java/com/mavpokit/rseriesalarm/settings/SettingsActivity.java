@@ -106,11 +106,11 @@ public class SettingsActivity extends AppCompatActivity {
                 R.drawable.tab_icon_other};
 
         final String[] TAB_NAMES = new String[]{
-                "Setup password",
-                "Setup numbers",
-                "Setup zones",
-                "Setup delays",
-                "Setup siren",
+                "Password",
+                "Numbers",
+                "Zones",
+                "Delays",
+                "Siren",
                 "Miscellaneous" };
 
         //set icons and color them with inactivetab color
@@ -127,7 +127,6 @@ public class SettingsActivity extends AppCompatActivity {
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
-                Toast.makeText(SettingsActivity.this,String.valueOf(position),Toast.LENGTH_SHORT).show();
                 getSupportActionBar().setTitle(TAB_NAMES[position]);
             }
             @Override public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
@@ -138,7 +137,7 @@ public class SettingsActivity extends AppCompatActivity {
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-//                setTitle(tab.getText()); //comment if tab has only icon
+                setTitle(tab.getText()); //comment if tab has only icon
                 tab.getIcon().setColorFilter(getResources().getColor(R.color.selectedTab), PorterDuff.Mode.SRC_IN);
             }
 

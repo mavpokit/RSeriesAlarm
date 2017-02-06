@@ -17,13 +17,20 @@
     <string name="disarm">Disarm</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="section_format">Hello World from section: %1$d</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="open_settings_explanation">To send command to device, you need to grant SMS permission. Open settings, turn on SMS permission, and try again</string>
     <string name="open">open</string>
     <string name="open_sms_permisssion_explanation">To send command to device, you need to grant SMS permission</string>
     <string name="open_sms_permission_dialog">Open SMS permission dialog</string>
     <string name="ok">Ok</string>
     <string name="sms_denied">Send SMS permission id denied. Control message to device can\'t be sent.</string>
+
+    <string-array name="tab_names">
+        <item>Password</item>
+        <item>Numbers</item>
+        <item>Zones</item>
+        <item>Delays</item>
+        <item>Siren</item>
+        <item>Miscellaneous</item>
+    </string-array>
+
 </resources>
