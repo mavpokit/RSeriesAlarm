@@ -160,12 +160,12 @@ public class SettingsActivity extends AppCompatActivity {
         return new FragmentPagerAdapter(getSupportFragmentManager()) {
 
             private Fragment[] fragments = new Fragment[]{
-                    new SetupPasswordFragment(),
-                    new SetupNumbersFragment(),
-                    new SetupZonesFragment(),
-                    new SetupDelaysFragment(),
-                    new SetupSirenFragment(),
-                    new OtherSettingsFragment()};
+                    SetupPasswordFragment.newInstance(alarmObject.getNumber()),
+                    SetupNumbersFragment.newInstance(alarmObject.getNumber()),
+                    SetupZonesFragment.newInstance(alarmObject.getNumber()),
+                    SetupDelaysFragment.newInstance(alarmObject.getNumber()),
+                    SetupSirenFragment.newInstance(alarmObject.getNumber()),
+                    OtherSettingsFragment.newInstance(alarmObject.getNumber())};
 
 
             private static final String TAG = "-----PagerAdapter-----";

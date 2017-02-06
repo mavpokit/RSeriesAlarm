@@ -12,13 +12,7 @@ import com.mavpokit.rseriesalarm.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SetupNumbersFragment extends Fragment {
-
-
-    public SetupNumbersFragment() {
-        // Required empty public constructor
-    }
-
+public class SetupNumbersFragment extends BaseSettingsFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

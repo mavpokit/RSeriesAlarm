@@ -9,16 +9,7 @@ import android.view.ViewGroup;
 
 import com.mavpokit.rseriesalarm.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class SetupDelaysFragment extends Fragment {
-
-
-    public SetupDelaysFragment() {
-        // Required empty public constructor
-    }
-
+public class SetupDelaysFragment extends BaseSettingsFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
