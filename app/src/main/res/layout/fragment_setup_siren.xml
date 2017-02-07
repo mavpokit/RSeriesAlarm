@@ -1,13 +1,102 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:infoview="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="1dp"
     tools:context="com.mavpokit.rseriesalarm.settings.fragments.SetupSirenFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/siren_time_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="siren" />
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/textview_siren_time"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/siren_time" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/edittext_siren_time_cardview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:cardBackgroundColor="@color/colorAccentSecondaryLight"
+            app:cardElevation="1dp">
+
+            <EditText
+                android:id="@+id/edittext_siren_time"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="3"
+                android:textSize="20sp" />
+        </android.support.v7.widget.CardView>
+
+        <ImageButton
+            android:id="@+id/set_alarm_delay_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/custom_round_button"
+            app:srcCompat="@drawable/ic_done" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/siren_responce_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/siren_time_layout"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textview_siren_responce"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/siren_responce" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/spinner_siren_responce_cardview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:cardBackgroundColor="@color/colorAccentSecondaryLight"
+            app:cardElevation="1dp">
+
+            <Spinner
+                android:id="@+id/spinner_siren_responce"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp" />
+
+        </android.support.v7.widget.CardView>
+
+        <ImageButton
+            android:id="@+id/set_arm_delay_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/custom_round_button"
+            app:srcCompat="@drawable/ic_done" />
+    </LinearLayout>
+
+    <com.mavpokit.rseriesalarm.util.InfoView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="4dp"
+        infoview:message="@string/siren_info_text" />
+
+</RelativeLayout>
