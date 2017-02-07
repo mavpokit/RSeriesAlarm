@@ -28,14 +28,84 @@
     <string name="about_message">\tCreated by Mavpokit\n\twww.mavpokit.com</string>
     <string name="setup">Setup</string>
     <string name="new_password">Enter new password for device. After SMS confirmation from device, don\'t forget to change password in Objects settings</string>
+    <string name="serial_number">Serial number</string>
+    <string name="function1">Action when alarm occurence</string>
+    <string name="function2">Action when dialing to device</string>
+    <string name="make_call">Make call</string>
+    <string name="remove">remove</string>
+    <string name="authorized_number">Authorized number (max 18 characters)</string>
+    <string name="set_auth_num">Set Authorized numbers</string>
+    <string name="remove_auth_num">Remove Authorized Number</string>
+    <string name="numbers_info_text">See Manual, section 6.2 - 6.4 for details</string>
+    <string name="set_zones">Setup the Zone Attribute</string>
+    <string name="zone_number">Zone number</string>
+    <string name="zone_attribute">Attribute code</string>
+    <string name="inquire_zone_attribute">inquire zone attribute</string>
+    <string name="inquire_auth_num">inquire authorized numbers</string>
+    <string name="alarm_content">Modify the SMS Alarm Content</string>
+    <string name="zones_info_text">See Manual, section 6.5 - 6.8 for details</string>
 
     <string-array name="tab_names">
-        <item>Password</item>
         <item>Numbers</item>
         <item>Zones</item>
         <item>Delays</item>
         <item>Siren</item>
         <item>Miscellaneous</item>
+        <item>Password</item>
     </string-array>
+
+    <string-array name="serial_numbers">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
+    <string-array name="function1">
+        <item>1 - dial and sms</item>
+        <item>2 - only sms</item>
+        <item>3 - only dial</item>
+    </string-array>
+
+    <string-array name="function2">
+        <item>1 - reject and change to Stay</item>
+        <item>2 - pick up and create voice communication</item>
+        <item>3 - hang up</item>
+    </string-array>
+
+    <string-array name="zone_numbers">
+        <item>00</item>
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+    </string-array>
+
+    <string-array name="zone_attribute">
+        <item>0 - entrance</item>
+        <item>1 - outer zones</item>
+        <item>2 - inner zones</item>
+        <item>3 - spot alarm zone</item>
+        <item>4 - 24h emergency zone with sounds</item>
+        <item>5 - 24h emergency silent zone</item>
+        <item>6 - Armed Button</item>
+        <item>7 - Stay Button</item>
+        <item>8 - Disarm Button</item>
+        <item>9 - Door Bell Button</item>
+    </string-array>
+
 
 </resources>

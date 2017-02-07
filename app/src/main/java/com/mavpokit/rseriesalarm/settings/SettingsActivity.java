@@ -26,6 +26,8 @@ import com.mavpokit.rseriesalarm.settings.fragments.SetupNumbersFragment;
 import com.mavpokit.rseriesalarm.settings.fragments.SetupPasswordFragment;
 import com.mavpokit.rseriesalarm.settings.fragments.SetupSirenFragment;
 import com.mavpokit.rseriesalarm.settings.fragments.SetupZonesFragment;
+import com.mavpokit.rseriesalarm.util.AboutDialog;
+import com.mavpokit.rseriesalarm.util.MySmsManager;
 
 import butterknife.ButterKnife;
 
@@ -74,6 +76,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_about) {
+            (new AboutDialog()).show(getSupportFragmentManager(),"AboutDialog");
             return true;
         }
 
@@ -98,20 +101,14 @@ public class SettingsActivity extends AppCompatActivity {
         tabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.indicator));
 
         int[]TAB_IMAGES = new int[]{
-                R.drawable.tab_icon_password,
                 R.drawable.tab_icon_numbers,
                 R.drawable.tab_icon_zones,
                 R.drawable.tab_icon_delay,
                 R.drawable.tab_icon_siren,
-                R.drawable.tab_icon_other};
+                R.drawable.tab_icon_other,
+                R.drawable.tab_icon_password};
 
-        final String[] TAB_NAMES = new String[]{
-                "Password",
-                "Numbers",
-                "Zones",
-                "Delays",
-                "Siren",
-                "Miscellaneous" };
+        final String[] TAB_NAMES = getResources().getStringArray(R.array.tab_names);
 
         //set icons and color them with inactivetab color
         for (int i=0;i<tabLayout.getTabCount();i++){
@@ -154,12 +151,12 @@ public class SettingsActivity extends AppCompatActivity {
         return new FragmentPagerAdapter(getSupportFragmentManager()) {
 
             private Fragment[] fragments = new Fragment[]{
-                    SetupPasswordFragment.newInstance(alarmObject.getNumber()),
-                    SetupNumbersFragment.newInstance(alarmObject.getNumber()),
-                    SetupZonesFragment.newInstance(alarmObject.getNumber()),
-                    SetupDelaysFragment.newInstance(alarmObject.getNumber()),
-                    SetupSirenFragment.newInstance(alarmObject.getNumber()),
-                    SetupOtherFragment.newInstance(alarmObject.getNumber())};
+                    SetupNumbersFragment.newInstance(alarmObject),
+                    SetupZonesFragment.newInstance(alarmObject),
+                    SetupDelaysFragment.newInstance(alarmObject),
+                    SetupSirenFragment.newInstance(alarmObject),
+                    SetupOtherFragment.newInstance(alarmObject),
+                    SetupPasswordFragment.newInstance(alarmObject)};
 
 
             private static final String TAG = "-----PagerAdapter-----";
@@ -197,6 +194,19 @@ public class SettingsActivity extends AppCompatActivity {
 
         };
     }
+
+    @Override
+    protected void onDestroy() {
+        MySmsManager.clearActivityReference();
+        super.onDestroy();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        MySmsManager.onRequestPermissionsResult(requestCode,permissions,grantResults);
+    }
+
 
 
 }

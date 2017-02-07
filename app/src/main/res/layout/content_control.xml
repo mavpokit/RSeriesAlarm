@@ -96,7 +96,7 @@
             android:background="@drawable/custom_button"
             android:drawableLeft="@drawable/ic_call_wrapped"
             android:paddingLeft="20dp"
-            android:text="Make call"
+            android:text="@string/make_call"
             android:textColor="@color/colorLight" />
 
         <Button

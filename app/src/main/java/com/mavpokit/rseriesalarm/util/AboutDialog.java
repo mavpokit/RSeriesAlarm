@@ -1,4 +1,4 @@
-package com.mavpokit.rseriesalarm;
+package com.mavpokit.rseriesalarm.util;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
 import android.widget.TextView;
+
+import com.mavpokit.rseriesalarm.R;
 
 /**
  * Created by Alex on 06.02.2017.

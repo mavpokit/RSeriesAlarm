@@ -1,13 +1,201 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:infoview="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="5dp"
+tools:context="com.mavpokit.rseriesalarm.settings.fragments.SetupZonesFragment">
+
+<android.support.v7.widget.CardView
+    android:id="@+id/set_zones_cardview"
+    app:cardElevation="5dp"
+    android:layout_marginTop="10dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.mavpokit.rseriesalarm.settings.fragments.SetupZonesFragment">
+    android:layout_height="wrap_content">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="zones" />
+    <RelativeLayout
+        android:padding="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/textview_set_zones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="15sp"
+            android:text="@string/set_zones"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textview_zone_number"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview_set_zones"
+            android:layout_marginTop="10dp"
+            android:text="@string/zone_number" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/spinner_zone_number_cardview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/textview_zone_number"
+            android:layout_toRightOf="@id/textview_zone_number"
+            app:cardBackgroundColor="@color/colorAccentSecondaryLight"
+            app:cardElevation="1dp">
+
+            <Spinner
+                android:id="@+id/spinner_zone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp" />
+        </android.support.v7.widget.CardView>
+
+        <ImageButton
+            android:id="@+id/set_auth_number_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/textview_set_zones"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/custom_round_button"
+            app:srcCompat="@drawable/ic_done" />
+
+        <TextView
+            android:id="@+id/textview_zone_attrinute"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinner_zone_number_cardview"
+            android:layout_marginTop="15dp"
+            android:text="@string/zone_attribute" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/zone_attrinute_cardview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/textview_zone_attrinute"
+            android:layout_margin="1dp"
+            android:layout_toRightOf="@id/textview_zone_attrinute"
+            app:cardBackgroundColor="@color/colorAccentSecondaryLight"
+            app:cardElevation="1dp">
+
+            <Spinner
+                android:id="@+id/spinner_zone_attrinute"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp" />
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
+
+    <Button
+        android:id="@+id/inquire_zone_attr_button"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/set_zones_cardview"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/custom_button"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="@string/inquire_zone_attribute"
+        android:textColor="@color/colorLight"
+        app:srcCompat="@android:drawable/ic_menu_delete" />
+
+
+
+<android.support.v7.widget.CardView
+    android:id="@+id/alarm_content_cardview"
+    app:cardElevation="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/inquire_zone_attr_button"
+    android:layout_marginTop="10dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dp">
+
+        <TextView
+            android:id="@+id/textview_alarm_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/alarm_content"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textview_zone_number_content"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview_alarm_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/zone_number" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/spinner_sn_remove_cardview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/textview_zone_number_content"
+            android:layout_toRightOf="@id/textview_zone_number_content"
+            app:cardBackgroundColor="@color/colorAccentSecondaryLight"
+            app:cardElevation="1dp">
+
+            <Spinner
+                android:id="@+id/spinner_zone_number_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp" />
+
+        </android.support.v7.widget.CardView>
+
+        <ImageButton
+            android:id="@+id/set_alarm_content_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/textview_alarm_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/custom_round_button"
+            app:srcCompat="@drawable/ic_done" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/editTextAlarmContent_cardview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/set_alarm_content_button"
+            android:layout_marginTop="5dp"
+            app:cardBackgroundColor="@color/colorAccentSecondaryLight"
+            app:cardElevation="1dp">
+
+            <EditText
+                android:id="@+id/editTextAlarmContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="18"
+                android:textSize="20sp" />
+        </android.support.v7.widget.CardView>
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
+
+
+<com.mavpokit.rseriesalarm.util.InfoView
+    infoview:message="@string/zones_info_text"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_marginBottom="4dp"/>
+
+
+</RelativeLayout>

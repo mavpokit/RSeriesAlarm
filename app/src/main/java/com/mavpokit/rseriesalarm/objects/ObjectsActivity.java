@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.mavpokit.rseriesalarm.AboutDialog;
+import com.mavpokit.rseriesalarm.util.AboutDialog;
 import com.mavpokit.rseriesalarm.Consts;
 import com.mavpokit.rseriesalarm.Injection;
 import com.mavpokit.rseriesalarm.R;

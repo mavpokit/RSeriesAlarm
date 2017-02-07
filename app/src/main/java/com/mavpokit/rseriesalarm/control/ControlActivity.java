@@ -19,6 +19,7 @@ import com.mavpokit.rseriesalarm.Consts;
 import com.mavpokit.rseriesalarm.R;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
 import com.mavpokit.rseriesalarm.settings.SettingsActivity;
+import com.mavpokit.rseriesalarm.util.AboutDialog;
 import com.mavpokit.rseriesalarm.util.MySmsManager;
 
 import butterknife.BindView;
@@ -44,9 +45,6 @@ public class ControlActivity extends AppCompatActivity {
     Button settingsButton;
 
     AlarmObject alarmObject;
-
-    private String smsNumber;
-    private String smsMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,19 +76,19 @@ public class ControlActivity extends AppCompatActivity {
 
     @OnClick(R.id.arm_button)
     void armButtonClick() {
-        smsMessage = alarmObject.getCode() + "AA";
+        String smsMessage = alarmObject.getCode() + "AA";
         MySmsManager.sendSms(this, alarmObject.getNumber(),smsMessage);
     }
 
     @OnClick(R.id.disarm_button)
     void disarmButtonClick() {
-        smsMessage = alarmObject.getCode() + "BB";
+        String smsMessage = alarmObject.getCode() + "BB";
         MySmsManager.sendSms(this, alarmObject.getNumber(),smsMessage);
     }
 
     @OnClick(R.id.request_status_button)
     void requstStatusButtonClick() {
-        smsMessage = alarmObject.getCode() + "EE";
+        String smsMessage = alarmObject.getCode() + "EE";
         MySmsManager.sendSms(this, alarmObject.getNumber(),smsMessage);
     }
 
@@ -151,6 +149,7 @@ public class ControlActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_about) {
+            (new AboutDialog()).show(getSupportFragmentManager(),"AboutDialog");
             return true;
         }
 

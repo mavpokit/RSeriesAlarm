@@ -9,15 +9,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.mavpokit.rseriesalarm.R;
+import com.mavpokit.rseriesalarm.data.model.AlarmObject;
 
+import static com.mavpokit.rseriesalarm.Consts.ALARM_OBJECT;
 import static com.mavpokit.rseriesalarm.Consts.NUMBER;
 
 public class SetupSirenFragment extends BaseSettingsFragment {
 
-    public static BaseSettingsFragment newInstance(String smsNumber) {
+    public static BaseSettingsFragment newInstance(AlarmObject alarmObject) {
         BaseSettingsFragment fragment = new SetupSirenFragment();
         Bundle args = new Bundle();
-        args.putString(NUMBER, smsNumber);
+        args.putSerializable(ALARM_OBJECT,alarmObject);
         fragment.setArguments(args);
         return fragment;
     }

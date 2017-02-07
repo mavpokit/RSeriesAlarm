@@ -6,6 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.mavpokit.rseriesalarm.data.model.AlarmObject;
+
+import static com.mavpokit.rseriesalarm.Consts.ALARM_OBJECT;
 import static com.mavpokit.rseriesalarm.Consts.NUMBER;
 
 /**
@@ -13,7 +16,7 @@ import static com.mavpokit.rseriesalarm.Consts.NUMBER;
  */
 
 public abstract class BaseSettingsFragment extends Fragment {
-    protected String smsNumber;
+    protected AlarmObject alarmObject;
 
     public BaseSettingsFragment() {
         // Required empty public constructor
@@ -31,7 +34,7 @@ public abstract class BaseSettingsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            smsNumber = getArguments().getString(NUMBER);
+            alarmObject = (AlarmObject) (getArguments().getSerializable(ALARM_OBJECT)) ;
         }
     }
 
