@@ -11,6 +11,7 @@ import android.widget.Spinner;
 
 import com.mavpokit.rseriesalarm.R;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
+import com.mavpokit.rseriesalarm.util.ColouredSpinner;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,14 +24,14 @@ import static com.mavpokit.rseriesalarm.Consts.NUMBER;
  */
 public class SetupNumbersFragment extends BaseSettingsFragment {
 
-    @BindView(R.id.spinner_sn)
-    Spinner snSpinner;
+    @BindView(R.id.spinner_serial_number)
+    ColouredSpinner serialNumberSpinner;
     @BindView(R.id.spinner_f1)
     Spinner f1Spinner;
     @BindView(R.id.spinner_f2)
     Spinner f2Spinner;
     @BindView(R.id.spinner_sn_remove)
-    Spinner snRemoveSpinner;
+    Spinner removeSpinner;
 
 
     public static BaseSettingsFragment newInstance(AlarmObject alarmObject) {
@@ -57,8 +58,8 @@ public class SetupNumbersFragment extends BaseSettingsFragment {
         ArrayAdapter<CharSequence> adapterSn = ArrayAdapter.createFromResource(getActivity(),
                 R.array.serial_numbers, android.R.layout.simple_spinner_item);
         adapterSn.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        snSpinner.setAdapter(adapterSn);
-        snRemoveSpinner.setAdapter(adapterSn);
+        serialNumberSpinner.setAdapter(adapterSn);
+        removeSpinner.setAdapter(adapterSn);
 
         ArrayAdapter<CharSequence> adapterF1 = ArrayAdapter.createFromResource(getActivity(),
                 R.array.function1array, android.R.layout.simple_spinner_item);

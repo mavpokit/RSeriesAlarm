@@ -48,20 +48,14 @@
                         android:layout_marginTop="10dp"
                         android:text="@string/serial_number" />
 
-                    <FrameLayout
-                        android:id="@+id/spinner_sn_layout"
+                    <com.mavpokit.rseriesalarm.util.ColouredSpinner
+                        android:id="@+id/spinner_serial_number"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignTop="@id/textview_sn"
+                        android:layout_margin="1dp"
                         android:layout_toRightOf="@id/textview_sn"
-                        android:background="@drawable/input_field_background">
-
-                        <Spinner
-                            android:id="@+id/spinner_sn"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="1dp" />
-                    </FrameLayout>
+                        android:background="@drawable/input_field_background" />
 
                     <ImageButton
                         android:id="@+id/set_auth_number_button"
@@ -74,111 +68,69 @@
                         android:background="@drawable/custom_round_button"
                         app:srcCompat="@drawable/ic_done" />
 
-                    <TextView
-                        android:id="@+id/textview_an"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/spinner_sn_layout"
-                        android:layout_marginTop="10dp"
-                        android:text="@string/authorized_number" />
-
-                    <com.mavpokit.rseriesalarm.util.ColouredEditText
-                        android:id="@+id/editTextAuthNumber"
-                        app:inputType="number"
-                        app:maxLength="18"
-                        app:textSize="20"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/textview_an"
-                        android:background="@drawable/input_field_background"/>
-                    <!--<FrameLayout-->
-                        <!--android:id="@+id/editTextAuthNumber_layout"-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_below="@id/textview_an"-->
-                        <!--android:background="@drawable/input_field_background">-->
-
-                        <!--<EditText-->
-                            <!--android:id="@+id/editTextAuthNumber"-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_marginTop="0dp"-->
-                            <!--android:ems="10"-->
-                            <!--android:inputType="number"-->
-                            <!--android:maxLength="18"-->
-                            <!--android:textSize="20sp" />-->
-                    <!--</FrameLayout>-->
-
-
                     <LinearLayout
-                        android:id="@+id/f1_linear_layout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/editTextAuthNumber"
+                        android:layout_below="@id/spinner_serial_number"
                         android:layout_marginTop="10dp"
-                        android:gravity="center_vertical"
                         android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textview_an"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/authorized_number" />
+
+                        <com.mavpokit.rseriesalarm.util.ColouredEditText
+                            android:id="@+id/editTextAuthNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textview_an"
+                            android:background="@drawable/input_field_background"
+                            app:inputType="number"
+                            app:maxLength="18"
+                            app:textSize="20" />
 
                         <TextView
                             android:id="@+id/textview_f1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
                             android:text="@string/function1" />
 
-                        <FrameLayout
+                        <com.mavpokit.rseriesalarm.util.ColouredSpinner
+                            android:id="@+id/spinner_f1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/input_field_background">
-
-                            <Spinner
-                                android:id="@+id/spinner_f1"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="1dp" />
-
-                        </FrameLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/f2_linear_layout"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/f1_linear_layout"
-                        android:layout_marginTop="10dp"
-                        android:gravity="center_vertical"
-                        android:orientation="vertical">
+                            android:background="@drawable/input_field_background" />
 
                         <TextView
                             android:id="@+id/textview_f2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
                             android:text="@string/function2" />
 
-                        <FrameLayout
+                        <com.mavpokit.rseriesalarm.util.ColouredSpinner
+                            android:id="@+id/spinner_f2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/input_field_background">
-
-                            <Spinner
-                                android:id="@+id/spinner_f2"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="1dp" />
-                        </FrameLayout>
-
+                            android:background="@drawable/input_field_background" />
                     </LinearLayout>
 
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 
+            <!--framelayout is needed because button right margin don't work with wrap_content-->
             <FrameLayout
                 android:id="@+id/inquire_auth_num_button_layout"
-                android:layout_below="@id/set_auth_num_cardview"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@id/set_auth_num_cardview"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp">
+
                 <Button
                     android:id="@+id/inquire_auth_num_button"
                     android:layout_width="wrap_content"
@@ -188,9 +140,8 @@
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
                     android:text="@string/inquire_auth_num"
-                    android:textColor="@color/colorLight"/>
+                    android:textColor="@color/colorLight" />
             </FrameLayout>
-
 
             <android.support.v7.widget.CardView
                 android:id="@+id/remove_auth_num_cardview"
@@ -223,21 +174,14 @@
                         android:layout_marginTop="5dp"
                         android:text="@string/serial_number" />
 
-                    <FrameLayout
-                        android:id="@+id/spinner_sn_remove_layout"
+                    <com.mavpokit.rseriesalarm.util.ColouredSpinner
+                        android:id="@+id/spinner_sn_remove"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignTop="@id/textview_sn_remove"
+                        android:layout_margin="1dp"
                         android:layout_toRightOf="@id/textview_sn_remove"
-                        android:background="@drawable/input_field_background">
-
-                        <Spinner
-                            android:id="@+id/spinner_sn_remove"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="1dp" />
-
-                    </FrameLayout>
+                        android:background="@drawable/input_field_background" />
 
                     <Button
                         android:id="@+id/remove_sn_button"
