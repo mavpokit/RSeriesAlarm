@@ -12,6 +12,7 @@ import android.widget.Spinner;
 
 import com.mavpokit.rseriesalarm.R;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
+import com.mavpokit.rseriesalarm.util.ColouredSpinner;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,7 +23,7 @@ import static com.mavpokit.rseriesalarm.Consts.NUMBER;
 public class SetupSirenFragment extends BaseSettingsFragment {
 
     @BindView(R.id.spinner_siren_responce)
-    Spinner sirenResponceSpinner;
+    ColouredSpinner sirenResponceSpinner;
 
 
     public static BaseSettingsFragment newInstance(AlarmObject alarmObject) {

@@ -27,11 +27,11 @@ public class SetupNumbersFragment extends BaseSettingsFragment {
     @BindView(R.id.spinner_serial_number)
     ColouredSpinner serialNumberSpinner;
     @BindView(R.id.spinner_f1)
-    Spinner f1Spinner;
+    ColouredSpinner f1Spinner;
     @BindView(R.id.spinner_f2)
-    Spinner f2Spinner;
+    ColouredSpinner f2Spinner;
     @BindView(R.id.spinner_sn_remove)
-    Spinner removeSpinner;
+    ColouredSpinner removeSpinner;
 
 
     public static BaseSettingsFragment newInstance(AlarmObject alarmObject) {

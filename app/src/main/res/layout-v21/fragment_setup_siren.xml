@@ -4,90 +4,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="1dp"
-    tools:context="com.mavpokit.rseriesalarm.settings.fragments.SetupDelaysFragment">
+    android:padding="10dp"
+    tools:context="com.mavpokit.rseriesalarm.settings.fragments.SetupSirenFragment">
 
 
     <android.support.v7.widget.CardView
-        android:id="@+id/alarm_delay_container"
+        android:id="@+id/siren_time_container"
+        android:layout_marginTop="5dp"
+        app:cardElevation="5dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        app:cardElevation="5dp">
+        android:layout_height="wrap_content">
+
 
         <RelativeLayout
-            android:id="@+id/alarm_delay_linear_layout"
+            android:id="@+id/siren_time_linear_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="5dp">
+            android:padding="5dp"
+            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textview_alarm_delay"
-                android:layout_width="140dp"
+                android:id="@+id/textview_siren_time"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="@string/alarm_delay" />
+                android:layout_centerVertical="true"
+                android:text="@string/siren_time" />
 
             <com.mavpokit.rseriesalarm.util.ColouredEditText
-                android:id="@+id/edittext_alarm_delay"
+                android:id="@+id/edittext_siren_time"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_toRightOf="@id/textview_alarm_delay"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/textview_siren_time"
                 android:background="@drawable/input_field_background"
                 app:inputType="number"
                 app:maxLength="3"
                 app:textSize="20" />
 
-
             <ImageButton
                 android:id="@+id/set_alarm_delay_button"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_alignParentRight="true"
+                android:layout_margin="5dp"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="25dp"
+                android:layout_alignParentRight="true"
                 android:background="@drawable/custom_round_button"
                 app:srcCompat="@drawable/ic_done" />
+
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
-        android:id="@+id/arm_delay_container"
+        android:id="@+id/siren_responce_container"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/alarm_delay_container"
-        android:layout_marginTop="1dp"
-        app:cardElevation="5dp">
+        app:cardElevation="5dp"
+        android:layout_below="@id/siren_time_container">
 
         <RelativeLayout
-            android:id="@+id/arm_delay_layout"
+            android:id="@+id/siren_responce_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="5dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="5dp">
-
+            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textview_arm_delay"
-                android:layout_width="140dp"
+                android:id="@+id/textview_siren_responce"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="@string/arm_delay" />
+                android:layout_centerVertical="true"
+                android:text="@string/siren_responce" />
 
-            <com.mavpokit.rseriesalarm.util.ColouredEditText
-                android:id="@+id/edittext_arm_delay"
-                android:layout_width="50dp"
+            <com.mavpokit.rseriesalarm.util.ColouredSpinner
+                android:id="@+id/spinner_siren_responce"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_toRightOf="@id/textview_arm_delay"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/textview_siren_responce"
                 android:background="@drawable/input_field_background"
-                app:inputType="number"
-                app:maxLength="2"
-                app:textSize="20" />
+                android:layout_margin="1dp" />
+
+
 
             <ImageButton
                 android:id="@+id/set_arm_delay_button"
@@ -95,6 +98,7 @@
                 android:layout_height="40dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
+                android:layout_margin="5dp"
                 android:background="@drawable/custom_round_button"
                 app:srcCompat="@drawable/ic_done" />
         </RelativeLayout>
@@ -104,7 +108,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="1dp"
-        infoview:message="@string/delays_info_text" />
+        android:layout_marginBottom="4dp"
+        infoview:message="@string/siren_info_text" />
 
 </RelativeLayout>

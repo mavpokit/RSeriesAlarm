@@ -12,6 +12,7 @@ import android.widget.Spinner;
 
 import com.mavpokit.rseriesalarm.R;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
+import com.mavpokit.rseriesalarm.util.ColouredSpinner;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,11 +23,11 @@ import static com.mavpokit.rseriesalarm.Consts.NUMBER;
 public class SetupZonesFragment extends BaseSettingsFragment {
 
     @BindView(R.id.spinner_zone_number)
-    Spinner zoneNumberSpinner;
+    ColouredSpinner zoneNumberSpinner;
     @BindView(R.id.spinner_zone_attrinute)
-    Spinner zoneAttrSpinner;
+    ColouredSpinner zoneAttrSpinner;
     @BindView(R.id.spinner_zone_number_content)
-    Spinner zoneNumberContentSpinner;
+    ColouredSpinner zoneNumberContentSpinner;
 
     public static BaseSettingsFragment newInstance(AlarmObject alarmObject) {
         BaseSettingsFragment fragment = new SetupZonesFragment();

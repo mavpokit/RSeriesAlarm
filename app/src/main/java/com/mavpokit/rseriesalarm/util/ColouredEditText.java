@@ -92,4 +92,7 @@ public class ColouredEditText extends FrameLayout {
     public String getText(){
         return editText.getText().toString();
     }
+    public void setError(String error){
+        editText.setError(error);
+    }
 }

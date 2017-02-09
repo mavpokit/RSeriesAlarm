@@ -11,6 +11,8 @@ import android.widget.EditText;
 
 import com.mavpokit.rseriesalarm.R;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
+import com.mavpokit.rseriesalarm.util.ColouredEditText;
+import com.mavpokit.rseriesalarm.util.ColouredSpinner;
 import com.mavpokit.rseriesalarm.util.MySmsManager;
 
 import butterknife.BindView;
@@ -23,7 +25,7 @@ import static com.mavpokit.rseriesalarm.Consts.NUMBER;
 public class SetupPasswordFragment extends BaseSettingsFragment {
 
     @BindView(R.id.edittext_password)
-    EditText editTextPassword;
+    ColouredEditText editTextPassword;
 
     public static BaseSettingsFragment newInstance(AlarmObject alarmObject) {
         BaseSettingsFragment fragment = new SetupPasswordFragment();
