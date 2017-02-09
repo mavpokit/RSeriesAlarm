@@ -61,12 +61,12 @@ public class SetupNumbersFragment extends BaseSettingsFragment {
         snRemoveSpinner.setAdapter(adapterSn);
 
         ArrayAdapter<CharSequence> adapterF1 = ArrayAdapter.createFromResource(getActivity(),
-                R.array.function1, android.R.layout.simple_spinner_item);
+                R.array.function1array, android.R.layout.simple_spinner_item);
         adapterF1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         f1Spinner.setAdapter(adapterF1);
 
         ArrayAdapter<CharSequence> adapterF2 = ArrayAdapter.createFromResource(getActivity(),
-                R.array.function2, android.R.layout.simple_spinner_item);
+                R.array.function2array, android.R.layout.simple_spinner_item);
         adapterF2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         f2Spinner.setAdapter(adapterF2);
 

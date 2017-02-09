@@ -4,92 +4,125 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="1dp"
+    android:padding="5dp"
     tools:context="com.mavpokit.rseriesalarm.settings.fragments.SetupDelaysFragment">
 
-    <TextView
-        android:id="@+id/textview_alarm_delay"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="@string/alarm_delay" />
 
     <android.support.v7.widget.CardView
-        android:id="@+id/edittext_alarm_delay_cardview"
-        android:layout_width="wrap_content"
+        android:id="@+id/alarm_delay_container"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_toRightOf="@id/textview_alarm_delay"
-        app:cardBackgroundColor="@color/colorAccentSecondaryLight"
-        app:cardElevation="1dp">
+        android:layout_marginTop="5dp">
 
-        <EditText
-            android:id="@+id/edittext_alarm_delay"
-            android:layout_width="70dp"
+
+        <RelativeLayout
+            android:id="@+id/alarm_delay_linear_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:ems="10"
-            android:gravity="center"
-            android:inputType="number"
-            android:maxLength="3"
-            android:textSize="20sp" />
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/textview_alarm_delay"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/alarm_delay"
+                android:layout_width="140dp" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/edittext_alarm_delay_cardview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_toRightOf="@id/textview_alarm_delay"
+                app:cardBackgroundColor="@color/colorAccentSecondaryLight"
+                app:cardElevation="1dp">
+
+                <EditText
+                    android:id="@+id/edittext_alarm_delay"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:textSize="20sp" />
+            </android.support.v7.widget.CardView>
+
+            <ImageButton
+                android:id="@+id/set_alarm_delay_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/custom_round_button"
+                app:srcCompat="@drawable/ic_done" />
+        </RelativeLayout>
     </android.support.v7.widget.CardView>
-
-    <ImageButton
-        android:id="@+id/set_alarm_delay_button"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_margin="10dp"
-        android:layout_toRightOf="@id/edittext_alarm_delay_cardview"
-        android:background="@drawable/custom_round_button"
-        app:srcCompat="@drawable/ic_done" />
-
-
-    <TextView
-        android:id="@+id/textview_arm_delay"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_below="@id/edittext_alarm_delay_cardview"
-        android:text="@string/arm_delay" />
 
     <android.support.v7.widget.CardView
-        android:id="@+id/edittext_arm_delay_cardview"
-        android:layout_width="wrap_content"
+        android:id="@+id/arm_delay_container"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_below="@id/edittext_alarm_delay_cardview"
-        android:layout_toRightOf="@id/textview_arm_delay"
-        app:cardBackgroundColor="@color/colorAccentSecondaryLight"
-        app:cardElevation="1dp">
+        android:layout_below="@id/alarm_delay_container"
+        android:layout_marginTop="10dp">
 
-        <EditText
-            android:id="@+id/edittext_arm_delay"
-            android:layout_width="50dp"
+        <RelativeLayout
+            android:id="@+id/arm_delay_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:ems="10"
-            android:gravity="center"
-            android:inputType="number"
-            android:maxLength="2"
-            android:textSize="20sp" />
-    </android.support.v7.widget.CardView>
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="5dp">
 
-    <ImageButton
-        android:id="@+id/set_arm_delay_button"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_margin="10dp"
-        android:layout_below="@id/edittext_alarm_delay_cardview"
-        android:layout_toRightOf="@id/edittext_alarm_delay_cardview"
-        android:background="@drawable/custom_round_button"
-        app:srcCompat="@drawable/ic_done" />
+
+            <TextView
+                android:id="@+id/textview_arm_delay"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/arm_delay"
+                android:layout_width="140dp" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/edittext_arm_delay_cardview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_toRightOf="@id/textview_arm_delay"
+                app:cardBackgroundColor="@color/colorAccentSecondaryLight"
+                app:cardElevation="1dp">
+
+                <EditText
+                    android:id="@+id/edittext_arm_delay"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textSize="20sp" />
+            </android.support.v7.widget.CardView>
+
+            <ImageButton
+                android:id="@+id/set_arm_delay_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/custom_round_button"
+                app:srcCompat="@drawable/ic_done" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
 
     <com.mavpokit.rseriesalarm.util.InfoView
-        infoview:message="@string/delays_info_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="4dp"/>
+        android:layout_marginBottom="4dp"
+        infoview:message="@string/delays_info_text" />
 
 </RelativeLayout>

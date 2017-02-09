@@ -30,11 +30,11 @@ tools:context="com.mavpokit.rseriesalarm.settings.fragments.SetupZonesFragment">
 
         <TextView
             android:id="@+id/textview_zone_number"
-            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/textview_set_zones"
             android:layout_marginTop="10dp"
-            android:text="@string/zone_number" />
+            android:text="@string/zone_number"
+            android:layout_width="105dp" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/spinner_zone_number_cardview"
@@ -65,11 +65,11 @@ tools:context="com.mavpokit.rseriesalarm.settings.fragments.SetupZonesFragment">
 
         <TextView
             android:id="@+id/textview_zone_attrinute"
-            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/spinner_zone_number_cardview"
             android:layout_marginTop="15dp"
-            android:text="@string/zone_attribute" />
+            android:text="@string/zone_attribute"
+            android:layout_width="105dp" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/zone_attrinute_cardview"
@@ -131,14 +131,14 @@ tools:context="com.mavpokit.rseriesalarm.settings.fragments.SetupZonesFragment">
 
         <TextView
             android:id="@+id/textview_zone_number_content"
-            android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/textview_alarm_content"
             android:layout_marginTop="5dp"
-            android:text="@string/zone_number" />
+            android:text="@string/zone_number"
+            android:layout_width="105dp" />
 
         <android.support.v7.widget.CardView
-            android:id="@+id/spinner_sn_remove_cardview"
+            android:id="@+id/spinner_sn_remove_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@id/textview_zone_number_content"

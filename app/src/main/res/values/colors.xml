@@ -2,14 +2,16 @@
 <resources>
     <color name="colorPrimary">#607D8B</color>
     <color name="colorPrimaryDark">#37474F</color>
-    <color name="colorPrimaryLight">#ebf2f5</color>
+    <color name="colorPrimaryLight">#e4ebed</color>
     <color name="colorAccent">#d10209</color>
     <color name="colorAccentSecondary">#009688</color>
     <color name="colorAccentSecondaryLight">#44009688</color>
+    <color name="colorAccentSecondaryLightStroke">#77a1abaa</color>
     <color name="colorAccentSecondaryDark">#005e55</color>
     <color name="colorLight">#FFFFFFFF</color>
     <color name="yellow">#FFFF00</color>
     <color name="inactiveTab">@color/colorPrimaryDark</color>
     <color name="selectedTab">#FFFFFF</color>
     <color name="indicator">#FFFFFF</color>
+    <color name="white_opacity">#88FFFFFF</color>
 </resources>

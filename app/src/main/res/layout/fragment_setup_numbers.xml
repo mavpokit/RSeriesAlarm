@@ -1,235 +1,258 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:infoview="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="5dp"
+    android:padding="1dp"
     tools:context="com.mavpokit.rseriesalarm.settings.fragments.SetupNumbersFragment">
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/set_auth_num_cardview"
-        app:cardElevation="5dp"
-        android:layout_marginTop="10dp"
+    <ScrollView
+        android:id="@+id/scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/info_v1"
+        android:layout_alignParentTop="true">
 
         <RelativeLayout
-            android:padding="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/textview_set_auth_num"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:textSize="15sp"
-                android:text="@string/set_auth_num"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textview_sn"
-                android:layout_width="90dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/textview_set_auth_num"
-                android:layout_marginTop="10dp"
-                android:text="@string/serial_number" />
-
             <android.support.v7.widget.CardView
-                android:id="@+id/spinner_sn_cardview"
-                android:layout_width="wrap_content"
+                android:id="@+id/set_auth_num_cardview"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@id/textview_sn"
-                android:layout_toRightOf="@id/textview_sn"
-                app:cardBackgroundColor="@color/colorAccentSecondaryLight"
-                app:cardElevation="1dp">
-
-                <Spinner
-                    android:id="@+id/spinner_sn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="1dp" />
-            </android.support.v7.widget.CardView>
-
-            <ImageButton
-                android:id="@+id/set_auth_number_button"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_below="@id/textview_set_auth_num"
                 android:layout_marginTop="0dp"
-                android:layout_marginRight="5dp"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/custom_round_button"
-                app:srcCompat="@drawable/ic_done" />
+                app:cardElevation="5dp">
 
-            <TextView
-                android:id="@+id/textview_an"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/spinner_sn_cardview"
-                android:layout_marginTop="15dp"
-                android:text="@string/authorized_number" />
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/editTextAuthNumber_cardview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/textview_an"
-                app:cardBackgroundColor="@color/colorAccentSecondaryLight"
-                app:cardElevation="1dp">
-
-                <EditText
-                    android:id="@+id/editTextAuthNumber"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="0dp"
-                    android:ems="10"
-                    android:inputType="number"
-                    android:maxLength="18"
-                    android:textSize="20sp" />
-            </android.support.v7.widget.CardView>
-
-
-
-
-            <TextView
-                android:id="@+id/textview_f1"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/editTextAuthNumber_cardview"
-                android:layout_marginTop="15dp"
-                android:text="@string/function1" />
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/spinner_f1_cardview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@id/textview_f1"
-                android:layout_margin="1dp"
-                android:layout_toRightOf="@id/textview_f1"
-                app:cardBackgroundColor="@color/colorAccentSecondaryLight"
-                app:cardElevation="1dp">
-
-                <Spinner
-                    android:id="@+id/spinner_f1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="1dp" />
-            </android.support.v7.widget.CardView>
-
-            <TextView
-                android:id="@+id/textview_f2"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/textview_f1"
-                android:layout_marginTop="15dp"
-                android:text="@string/function2" />
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/spinner_f2_cardview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@id/textview_f2"
-                android:layout_margin="1dp"
-                android:layout_toRightOf="@id/textview_f2"
-                app:cardBackgroundColor="@color/colorAccentSecondaryLight"
-                app:cardElevation="1dp">
-
-                <Spinner
-                    android:id="@+id/spinner_f2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="1dp" />
-            </android.support.v7.widget.CardView>
-
-
-
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
-
-    <Button
-        android:id="@+id/inquire_auth_num_button"
-        android:layout_width="wrap_content"
-        android:layout_height="28dp"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/set_auth_num_cardview"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/custom_button"
-        android:text="@string/inquire_auth_num"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:textColor="@color/colorLight"
-        app:srcCompat="@android:drawable/ic_menu_delete" />
-
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/remove_auth_num_cardview"
-        app:cardElevation="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/inquire_auth_num_button"
-        android:layout_marginTop="15dp">
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="3dp">
-
-            <TextView
-                android:id="@+id/textview_remove_auth_num"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:text="@string/remove_auth_num"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textview_sn_remove"
-                android:layout_width="90dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/textview_remove_auth_num"
-                android:layout_marginTop="5dp"
-                android:text="@string/serial_number" />
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/spinner_sn_remove_cardview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@id/textview_sn_remove"
-                android:layout_toRightOf="@id/textview_sn_remove"
-                app:cardBackgroundColor="@color/colorAccentSecondaryLight"
-                app:cardElevation="1dp">
-
-                <Spinner
-                    android:id="@+id/spinner_sn_remove"
+                <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="1dp" />
+                    android:padding="5dp">
 
+                    <TextView
+                        android:id="@+id/textview_set_auth_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/set_auth_num"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textview_sn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textview_set_auth_num"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/serial_number" />
+
+                    <FrameLayout
+                        android:id="@+id/spinner_sn_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/textview_sn"
+                        android:layout_toRightOf="@id/textview_sn"
+                        android:background="@drawable/spinner_bg">
+
+                        <Spinner
+                            android:id="@+id/spinner_sn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp" />
+                    </FrameLayout>
+
+                    <ImageButton
+                        android:id="@+id/set_auth_number_button"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/textview_set_auth_num"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/custom_round_button"
+                        app:srcCompat="@drawable/ic_done" />
+
+                    <TextView
+                        android:id="@+id/textview_an"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/spinner_sn_layout"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/authorized_number" />
+
+                    <FrameLayout
+                        android:id="@+id/editTextAuthNumber_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textview_an"
+                        android:background="@drawable/spinner_bg">
+
+                        <EditText
+                            android:id="@+id/editTextAuthNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:ems="10"
+                            android:inputType="number"
+                            android:maxLength="18"
+                            android:textSize="20sp" />
+                    </FrameLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/f1_linear_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editTextAuthNumber_layout"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textview_f1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/function1" />
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/spinner_bg">
+
+                            <Spinner
+                                android:id="@+id/spinner_f1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="1dp" />
+
+                        </FrameLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/f2_linear_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/f1_linear_layout"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textview_f2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/function2" />
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/spinner_bg">
+
+                            <Spinner
+                                android:id="@+id/spinner_f2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="1dp" />
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
             </android.support.v7.widget.CardView>
 
-            <Button
-                android:id="@+id/remove_sn_button"
-                android:layout_width="wrap_content"
-                android:layout_height="28dp"
-                android:layout_alignParentRight="true"
-                android:layout_below="@id/textview_remove_auth_num"
+            <FrameLayout
+                android:id="@+id/inquire_auth_num_button_layout"
+                android:layout_below="@id/set_auth_num_cardview"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/custom_button"
-                android:text="@string/remove"
-                android:textColor="@color/colorLight"
-                app:srcCompat="@android:drawable/ic_menu_delete" />
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/inquire_auth_num_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_gravity="end"
+                    android:background="@drawable/custom_button"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="@string/inquire_auth_num"
+                    android:textColor="@color/colorLight"/>
+            </FrameLayout>
 
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/remove_auth_num_cardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/inquire_auth_num_button_layout"
+                android:layout_marginTop="5dp"
+                app:cardElevation="5dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp">
+
+                    <TextView
+                        android:id="@+id/textview_remove_auth_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/remove_auth_num"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textview_sn_remove"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textview_remove_auth_num"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/serial_number" />
+
+                    <FrameLayout
+                        android:id="@+id/spinner_sn_remove_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/textview_sn_remove"
+                        android:layout_toRightOf="@id/textview_sn_remove"
+                        android:background="@drawable/spinner_bg">
+
+                        <Spinner
+                            android:id="@+id/spinner_sn_remove"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp" />
+
+                    </FrameLayout>
+
+                    <Button
+                        android:id="@+id/remove_sn_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/textview_remove_auth_num"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/custom_button"
+                        android:text="@string/remove"
+                        android:textColor="@color/colorLight"
+                        app:srcCompat="@android:drawable/ic_menu_delete" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
         </RelativeLayout>
-    </android.support.v7.widget.CardView>
+    </ScrollView>
 
     <com.mavpokit.rseriesalarm.util.InfoView
-        infoview:message="@string/numbers_info_text"
-        android:layout_width="match_parent"
+        android:id="@+id/info_v1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="4dp"/>
+        android:layout_marginBottom="1dp"
+        infoview:message="@string/numbers_info_text" />
 
 </RelativeLayout>
