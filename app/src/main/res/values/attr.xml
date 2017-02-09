@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="InfoView">
-        <attr name="message" format="string"/>
+        <attr name="message" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="ColouredEditText">
+        <attr name="initialText" format="string" />
+        <attr name="inputType" format="string" />
+        <attr name="textSize" format="integer"/>
+        <attr name="maxLength" format="integer"/>
     </declare-styleable>
 </resources>

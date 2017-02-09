@@ -11,7 +11,7 @@
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/info_v1"
+        android:layout_above="@+id/infoview_numbers"
         android:layout_alignParentTop="true">
 
         <RelativeLayout
@@ -54,7 +54,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignTop="@id/textview_sn"
                         android:layout_toRightOf="@id/textview_sn"
-                        android:background="@drawable/spinner_bg">
+                        android:background="@drawable/input_field_background">
 
                         <Spinner
                             android:id="@+id/spinner_sn"
@@ -82,30 +82,39 @@
                         android:layout_marginTop="10dp"
                         android:text="@string/authorized_number" />
 
-                    <FrameLayout
-                        android:id="@+id/editTextAuthNumber_layout"
+                    <com.mavpokit.rseriesalarm.util.ColouredEditText
+                        android:id="@+id/editTextAuthNumber"
+                        app:inputType="number"
+                        app:maxLength="18"
+                        app:textSize="20"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/textview_an"
-                        android:background="@drawable/spinner_bg">
+                        android:background="@drawable/input_field_background"/>
+                    <!--<FrameLayout-->
+                        <!--android:id="@+id/editTextAuthNumber_layout"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_below="@id/textview_an"-->
+                        <!--android:background="@drawable/input_field_background">-->
 
-                        <EditText
-                            android:id="@+id/editTextAuthNumber"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="0dp"
-                            android:ems="10"
-                            android:inputType="number"
-                            android:maxLength="18"
-                            android:textSize="20sp" />
-                    </FrameLayout>
+                        <!--<EditText-->
+                            <!--android:id="@+id/editTextAuthNumber"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginTop="0dp"-->
+                            <!--android:ems="10"-->
+                            <!--android:inputType="number"-->
+                            <!--android:maxLength="18"-->
+                            <!--android:textSize="20sp" />-->
+                    <!--</FrameLayout>-->
 
 
                     <LinearLayout
                         android:id="@+id/f1_linear_layout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/editTextAuthNumber_layout"
+                        android:layout_below="@id/editTextAuthNumber"
                         android:layout_marginTop="10dp"
                         android:gravity="center_vertical"
                         android:orientation="vertical">
@@ -119,7 +128,7 @@
                         <FrameLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/spinner_bg">
+                            android:background="@drawable/input_field_background">
 
                             <Spinner
                                 android:id="@+id/spinner_f1"
@@ -148,7 +157,7 @@
                         <FrameLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/spinner_bg">
+                            android:background="@drawable/input_field_background">
 
                             <Spinner
                                 android:id="@+id/spinner_f2"
@@ -220,7 +229,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignTop="@id/textview_sn_remove"
                         android:layout_toRightOf="@id/textview_sn_remove"
-                        android:background="@drawable/spinner_bg">
+                        android:background="@drawable/input_field_background">
 
                         <Spinner
                             android:id="@+id/spinner_sn_remove"
@@ -248,7 +257,7 @@
     </ScrollView>
 
     <com.mavpokit.rseriesalarm.util.InfoView
-        android:id="@+id/info_v1"
+        android:id="@+id/infoview_numbers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
