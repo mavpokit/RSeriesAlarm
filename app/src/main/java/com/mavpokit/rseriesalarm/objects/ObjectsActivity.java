@@ -16,7 +16,7 @@ import com.mavpokit.rseriesalarm.util.AboutDialog;
 import com.mavpokit.rseriesalarm.Consts;
 import com.mavpokit.rseriesalarm.Injection;
 import com.mavpokit.rseriesalarm.R;
-import com.mavpokit.rseriesalarm.addobject.AddObjectActivity;
+import com.mavpokit.rseriesalarm.addeditobject.AddEditObjectActivity;
 import com.mavpokit.rseriesalarm.control.ControlActivity;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
 import com.mavpokit.rseriesalarm.util.InfoView;
@@ -77,7 +77,7 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
     private void initFab() {
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(v -> {
-            Intent intent = new Intent(ObjectsActivity.this, AddObjectActivity.class);
+            Intent intent = new Intent(ObjectsActivity.this, AddEditObjectActivity.class);
             startActivityForResult(intent, Consts.REQUEST_CODE_ADD_OBJECT);
         });
     }
@@ -166,5 +166,13 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
         dialog.setArguments(bundle);
         dialog.setListener(resultCode -> presenter.onDialogResult(resultCode,object));
         dialog.show(getSupportFragmentManager(),"EditDeleteDialog");
+    }
+
+    @Override
+    public void showEditObject(AlarmObject object) {
+        Intent intent = new Intent(ObjectsActivity.this, AddEditObjectActivity.class);
+        intent.putExtra(Consts.ALARM_OBJECT,object);
+        startActivityForResult(intent, Consts.REQUEST_CODE_ADD_OBJECT);
+
     }
 }

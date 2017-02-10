@@ -71,7 +71,7 @@ public class SqliteDatasource implements IRepository{
     }
 
     @Override
-    public void addObject(AlarmObject alarmObject) {
+    public void insertObject(AlarmObject alarmObject) {
         checkNotNull(alarmObject);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
@@ -88,8 +88,22 @@ public class SqliteDatasource implements IRepository{
     }
 
     @Override
-    public void editObject() {
+    public void updateObject(AlarmObject alarmObject) {
+        checkNotNull(alarmObject);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
 
+        ContentValues values = new ContentValues();
+
+        values.put(DbHelper.COLUMN_NAME, alarmObject.getName());
+        values.put(DbHelper.COLUMN_NUMBER, alarmObject.getNumber());
+        values.put(DbHelper.COLUMN_CODE, alarmObject.getCode());
+
+        String selection = DbHelper.COLUMN_ID+ " LIKE ?";
+        String[] selectionArgs = { alarmObject.getId() };
+
+        db.update(DbHelper.TABLE_OBJECTS, values, selection, selectionArgs);
+
+        db.close();
     }
 
     @Override

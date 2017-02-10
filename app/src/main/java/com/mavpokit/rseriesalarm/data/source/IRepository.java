@@ -10,8 +10,8 @@ import java.util.List;
 
 public interface IRepository {
     List<AlarmObject> getObjects();
-    void addObject(AlarmObject alarmObject);
-    void editObject();
+    void insertObject(AlarmObject alarmObject);
+    void updateObject(AlarmObject alarmObject);
     void deleteObject(String id);
 
 }

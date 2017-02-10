@@ -15,7 +15,7 @@ public interface ObjectsContract {
         void openObject(AlarmObject object);
         void showNoObjectsText();
         void showEditDeleteDialog(AlarmObject object);
-
+        void showEditObject(AlarmObject object);
     }
     interface Presenter{
         void onCreate();

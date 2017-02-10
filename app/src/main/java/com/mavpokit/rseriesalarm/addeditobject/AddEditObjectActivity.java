@@ -1,26 +1,30 @@
-package com.mavpokit.rseriesalarm.addobject;
+package com.mavpokit.rseriesalarm.addeditobject;
 
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.widget.EditText;
 
 import com.mavpokit.rseriesalarm.Consts;
 import com.mavpokit.rseriesalarm.Injection;
 import com.mavpokit.rseriesalarm.R;
+import com.mavpokit.rseriesalarm.data.model.AlarmObject;
+import com.mavpokit.rseriesalarm.util.ColouredEditText;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class AddObjectActivity extends AppCompatActivity implements AddObjectContract.View {
+public class AddEditObjectActivity extends AppCompatActivity implements AddEditObjectContract.View {
 
-    AddObjectContract.Presenter presenter;
+    AlarmObject alarmObject;
+    String id;//indicates that we must update object if not null
 
-    @BindView(R.id.editTextObjectName)    EditText editTextObjectName;
-    @BindView(R.id.editTextDeviceNumber)    EditText editTextDeviceNumber;
-    @BindView(R.id.editTextDevicePassword)    EditText editTextDevicePassword;
+    AddEditObjectContract.Presenter presenter;
+
+    @BindView(R.id.editTextObjectName)    ColouredEditText editTextObjectName;
+    @BindView(R.id.editTextDeviceNumber)    ColouredEditText editTextDeviceNumber;
+    @BindView(R.id.editTextDevicePassword)    ColouredEditText editTextDevicePassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +38,21 @@ public class AddObjectActivity extends AppCompatActivity implements AddObjectCon
 
         initFab();
 
-        presenter = new AddObjectPresenter(this, Injection.provideRepository(getApplicationContext()));
+        //if alarmObject=null, than we insert new object
+        alarmObject = (AlarmObject) getIntent().getSerializableExtra(Consts.ALARM_OBJECT);
+        if (alarmObject!=null) id=alarmObject.getId();
+
+        populateEdits();
+
+        presenter = new AddEditObjectPresenter(this, id, Injection.provideRepository(getApplicationContext()));
+    }
+
+    private void populateEdits() {
+        if (alarmObject!=null){
+            editTextObjectName.setText(alarmObject.getName());
+            editTextDeviceNumber.setText(alarmObject.getNumber());
+            editTextDevicePassword.setText(alarmObject.getCode());
+        }
     }
 
     private void setLogo(Toolbar toolbar) {
@@ -57,7 +75,7 @@ public class AddObjectActivity extends AppCompatActivity implements AddObjectCon
 
     @Override
     public void closeAndSetResultOk() {
-        setResult(Consts.RESULT_OK_ADD_OBJECT);
+        setResult(Consts.RESULT_OK_ADD_EDIT_OBJECT);
         finish();
     }
 

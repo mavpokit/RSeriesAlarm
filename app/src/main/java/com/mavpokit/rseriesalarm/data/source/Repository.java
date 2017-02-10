@@ -1,7 +1,5 @@
 package com.mavpokit.rseriesalarm.data.source;
 
-import android.util.Log;
-
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
 import com.mavpokit.rseriesalarm.util.Logger;
 
@@ -53,13 +51,13 @@ public class Repository implements IRepository {
     }
 
     @Override
-    public void addObject(AlarmObject alarmObject) {
-        sqliteDatasource.addObject(alarmObject);
+    public void insertObject(AlarmObject alarmObject) {
+        sqliteDatasource.insertObject(alarmObject);
     }
 
     @Override
-    public void editObject() {
-
+    public void updateObject(AlarmObject alarmObject) {
+        sqliteDatasource.updateObject(alarmObject);
     }
 
     @Override

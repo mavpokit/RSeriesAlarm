@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".addobject.AddObjectActivity"
+            android:name=".addeditobject.AddEditObjectActivity"
             android:screenOrientation="portrait"
             android:label="@string/title_activity_add_object"
             android:parentActivityName=".objects.ObjectsActivity"

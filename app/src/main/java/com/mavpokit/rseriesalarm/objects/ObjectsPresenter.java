@@ -32,7 +32,7 @@ public class ObjectsPresenter implements ObjectsContract.Presenter {
     @Override
     public void onActivityResult(int requestCode, int resultCode) {
 
-        if (requestCode == Consts.REQUEST_CODE_ADD_OBJECT && resultCode == Consts.RESULT_OK_ADD_OBJECT) {
+        if (requestCode == Consts.REQUEST_CODE_ADD_OBJECT && resultCode == Consts.RESULT_OK_ADD_EDIT_OBJECT) {
             List<AlarmObject> alarmObjects = repository.getObjects();
             view.showObjects(alarmObjects);
         }
@@ -54,8 +54,7 @@ public class ObjectsPresenter implements ObjectsContract.Presenter {
         switch (resultCode) {
             case Consts.BTN_EDIT: {
 //                view.
-                List<AlarmObject> alarmObjects = repository.getObjects();
-                view.showObjects(alarmObjects);
+                view.showEditObject(object);
                 break;
             }
             case Consts.BTN_DELETE: {

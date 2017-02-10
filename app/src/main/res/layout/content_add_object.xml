@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.mavpokit.rseriesalarm.addobject.AddObjectActivity"
+    tools:context="com.mavpokit.rseriesalarm.addeditobject.AddEditObjectActivity"
     tools:showIn="@layout/activity_add_object">
 
     <LinearLayout
@@ -25,21 +25,14 @@
             android:layout_marginTop="10dp"
             android:text="Object Name" />
 
-        <android.support.v7.widget.CardView
+        <com.mavpokit.rseriesalarm.util.ColouredEditText
+            android:id="@+id/editTextObjectName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardElevation="1dp"
-            app:cardBackgroundColor="@color/colorAccentSecondaryLight">
-
-            <EditText
-                android:id="@+id/editTextObjectName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:textSize="20sp"
-                android:maxLength="40"
-                android:inputType="textPersonName" />
-        </android.support.v7.widget.CardView>
+            android:background="@drawable/input_field_background"
+            app:inputType="text"
+            app:maxLength="40"
+            app:textSize="20" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -47,22 +40,14 @@
             android:layout_marginTop="20dp"
             android:text="Device Number" />
 
-        <android.support.v7.widget.CardView
+        <com.mavpokit.rseriesalarm.util.ColouredEditText
+            android:id="@+id/editTextDeviceNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardElevation="1dp"
-            app:cardBackgroundColor="@color/colorAccentSecondaryLight">
-
-            <EditText
-                android:id="@+id/editTextDeviceNumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:ems="10"
-                android:textSize="20sp"
-                android:maxLength="20"
-                android:inputType="number" />
-        </android.support.v7.widget.CardView>
+            android:background="@drawable/input_field_background"
+            app:inputType="number"
+            app:maxLength="18"
+            app:textSize="20" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -70,22 +55,14 @@
             android:layout_marginTop="20dp"
             android:text="Device Password" />
 
-        <android.support.v7.widget.CardView
+        <com.mavpokit.rseriesalarm.util.ColouredEditText
+            android:id="@+id/editTextDevicePassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardElevation="1dp"
-            app:cardBackgroundColor="@color/colorAccentSecondaryLight">
-
-            <EditText
-                android:id="@+id/editTextDevicePassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:ems="10"
-                android:textSize="20sp"
-                android:maxLength="4"
-                android:inputType="numberPassword" />
-        </android.support.v7.widget.CardView>
+            android:background="@drawable/input_field_background"
+            app:inputType="numberPassword"
+            app:maxLength="4"
+            app:textSize="20" />
     </LinearLayout>
 
 </RelativeLayout>

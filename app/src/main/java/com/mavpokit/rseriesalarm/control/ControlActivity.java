@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mavpokit.rseriesalarm.Consts;
@@ -43,6 +44,9 @@ public class ControlActivity extends AppCompatActivity {
     Button callButton;
     @BindView(R.id.setup_button)
     Button settingsButton;
+    @BindView(R.id.textView_device_number)
+    TextView textViewDeviceNumber;
+
 
     AlarmObject alarmObject;
 
@@ -55,24 +59,24 @@ public class ControlActivity extends AppCompatActivity {
         alarmObject = (AlarmObject) getIntent().getSerializableExtra(Consts.ALARM_OBJECT);
 
         setupToolbar();
-
+        textViewDeviceNumber.setText(getString(R.string.sim_number) + alarmObject.getNumber());
     }
 
     private void setupToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_activity_control);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        setLogo(toolbar);
+//        setLogo(toolbar);
         checkNotNull(alarmObject);
         getSupportActionBar().setTitle(alarmObject.getName());
     }
 
-    private void setLogo(Toolbar toolbar) {
-        if (Build.VERSION.SDK_INT >= 21)
-            toolbar.setLogo(R.drawable.ic_launcher);
-        else
-            toolbar.setLogo(R.mipmap.ic_launcher);
-    }
+//    private void setLogo(Toolbar toolbar) {
+//        if (Build.VERSION.SDK_INT >= 21)
+//            toolbar.setLogo(R.drawable.ic_launcher);
+//        else
+//            toolbar.setLogo(R.mipmap.ic_launcher);
+//    }
 
     @OnClick(R.id.arm_button)
     void armButtonClick() {
