@@ -29,7 +29,7 @@
             android:label="@string/title_activity_add_object"
             android:parentActivityName=".objects.ObjectsActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="adjustPan">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.mavpokit.rseriesalarm.objects.ObjectsActivity" />
@@ -40,13 +40,22 @@
             android:screenOrientation="portrait"
             android:parentActivityName=".objects.ObjectsActivity"
             android:launchMode="singleTop"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mavpokit.rseriesalarm.objects.ObjectsActivity" />
+        </activity>
 
         <activity
             android:name=".settings.SettingsActivity"
             android:screenOrientation="portrait"
             android:parentActivityName=".control.ControlActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:windowSoftInputMode="adjustPan"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mavpokit.rseriesalarm.control.ControlActivity" />
+        </activity>
 
     </application>
 

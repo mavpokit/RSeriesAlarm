@@ -1,6 +1,7 @@
 package com.mavpokit.rseriesalarm.settings.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,8 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
+import com.mavpokit.rseriesalarm.Consts;
 import com.mavpokit.rseriesalarm.R;
+import com.mavpokit.rseriesalarm.addeditobject.AddEditObjectActivity;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
+import com.mavpokit.rseriesalarm.objects.ObjectsActivity;
 import com.mavpokit.rseriesalarm.util.ColouredEditText;
 import com.mavpokit.rseriesalarm.util.ColouredSpinner;
 import com.mavpokit.rseriesalarm.util.MySmsManager;
@@ -56,5 +60,12 @@ public class SetupPasswordFragment extends BaseSettingsFragment {
         String smsMessage = alarmObject.getCode() + "P" + newPassword;
         MySmsManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
 
+    }
+
+    @OnClick(R.id.launch_edit_password_button)
+    void luanch_edit(){
+        Intent intent = new Intent(getActivity(), AddEditObjectActivity.class);
+        intent.putExtra(Consts.ALARM_OBJECT,alarmObject);
+        startActivityForResult(intent, Consts.REQUEST_CODE_ADD_EDIT_OBJECT);
     }
 }

@@ -32,7 +32,7 @@ public class ObjectsPresenter implements ObjectsContract.Presenter {
     @Override
     public void onActivityResult(int requestCode, int resultCode) {
 
-        if (requestCode == Consts.REQUEST_CODE_ADD_OBJECT && resultCode == Consts.RESULT_OK_ADD_EDIT_OBJECT) {
+        if (requestCode == Consts.REQUEST_CODE_ADD_EDIT_OBJECT && resultCode == Consts.RESULT_OK_ADD_EDIT_OBJECT) {
             List<AlarmObject> alarmObjects = repository.getObjects();
             view.showObjects(alarmObjects);
         }
@@ -53,7 +53,6 @@ public class ObjectsPresenter implements ObjectsContract.Presenter {
     public void onDialogResult(int resultCode, AlarmObject object) {
         switch (resultCode) {
             case Consts.BTN_EDIT: {
-//                view.
                 view.showEditObject(object);
                 break;
             }

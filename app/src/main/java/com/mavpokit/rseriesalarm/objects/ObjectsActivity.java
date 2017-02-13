@@ -78,7 +78,7 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(v -> {
             Intent intent = new Intent(ObjectsActivity.this, AddEditObjectActivity.class);
-            startActivityForResult(intent, Consts.REQUEST_CODE_ADD_OBJECT);
+            startActivityForResult(intent, Consts.REQUEST_CODE_ADD_EDIT_OBJECT);
         });
     }
 
@@ -172,7 +172,8 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
     public void showEditObject(AlarmObject object) {
         Intent intent = new Intent(ObjectsActivity.this, AddEditObjectActivity.class);
         intent.putExtra(Consts.ALARM_OBJECT,object);
-        startActivityForResult(intent, Consts.REQUEST_CODE_ADD_OBJECT);
+        startActivityForResult(intent, Consts.REQUEST_CODE_ADD_EDIT_OBJECT);
+
 
     }
 }

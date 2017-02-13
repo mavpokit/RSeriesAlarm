@@ -42,6 +42,8 @@ public class ControlActivity extends AppCompatActivity {
     Button statusButton;
     @BindView(R.id.call_button)
     Button callButton;
+    @BindView(R.id.callback_button)
+    Button callbackButton;
     @BindView(R.id.setup_button)
     Button settingsButton;
     @BindView(R.id.textView_device_number)
@@ -71,12 +73,6 @@ public class ControlActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(alarmObject.getName());
     }
 
-//    private void setLogo(Toolbar toolbar) {
-//        if (Build.VERSION.SDK_INT >= 21)
-//            toolbar.setLogo(R.drawable.ic_launcher);
-//        else
-//            toolbar.setLogo(R.mipmap.ic_launcher);
-//    }
 
     @OnClick(R.id.arm_button)
     void armButtonClick() {
@@ -116,6 +112,13 @@ public class ControlActivity extends AppCompatActivity {
         }
 
     }
+
+    @OnClick(R.id.callback_button)
+    void callbackButtonClick() {
+        String smsMessage = alarmObject.getCode() + "K" + "#";
+        MySmsManager.sendSms(this, alarmObject.getNumber(),smsMessage);
+    }
+
 
     @OnClick(R.id.setup_button)
     void settingsButtonClick() {
@@ -161,3 +164,11 @@ public class ControlActivity extends AppCompatActivity {
     }
 
 }
+
+
+//    private void setLogo(Toolbar toolbar) {
+//        if (Build.VERSION.SDK_INT >= 21)
+//            toolbar.setLogo(R.drawable.ic_launcher);
+//        else
+//            toolbar.setLogo(R.mipmap.ic_launcher);
+//    }

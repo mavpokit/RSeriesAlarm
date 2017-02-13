@@ -110,6 +110,17 @@
             android:textColor="@color/colorLight" />
 
         <Button
+            android:id="@+id/callback_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/custom_button"
+            android:drawableLeft="@drawable/ic_callback"
+            android:paddingLeft="20dp"
+            android:text="@string/request_callback"
+            android:textColor="@color/colorLight" />
+
+        <Button
             android:id="@+id/setup_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

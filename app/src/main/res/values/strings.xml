@@ -27,7 +27,7 @@
     <string name="about_title">About</string>
     <string name="about_message">\tCreated by Mavpokit\n\twww.mavpokit.com</string>
     <string name="setup">Setup</string>
-    <string name="new_password">Enter new password for device. After SMS confirmation from device, don\'t forget to change password in Objects settings</string>
+    <string name="new_password">Enter new password for device. After SMS confirmation from device, don\'t forget to change password in Objects settings *</string>
     <string name="serial_number">Serial number</string>
     <string name="function1">Action when alarm occurence</string>
     <string name="function2">Action when dialing to device</string>
@@ -55,6 +55,7 @@
     <string name="auto_report">Automatically report status function interval, min (00-disable)</string>
     <string name="misc_info_text">See Manual, section 6.12, 6.14, 6.16 for details</string>
     <string name="sim_number">SIM Number: </string>
+    <string name="request_callback">request callback</string>
 
     <string-array name="tab_names">
         <item>Numbers</item>
