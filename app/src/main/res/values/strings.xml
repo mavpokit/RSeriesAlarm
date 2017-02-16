@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">R5 Alarm</string>
+    <string name="app_name">K2 Alarm</string>
     <string name="action_about">About</string>
     <string name="objectListActivityName">Alarm object list</string>
     <string name="title_activity_add_object">Add Alarm Object</string>
@@ -61,6 +61,8 @@
     <string name="request_callback">request callback</string>
     <string name="error_empty">cannot be empty</string>
     <string name="error_password">password must contain 4 digits!</string>
+    <string name="switch_on_siren">Switch ON the siren</string>
+    <string name="switch_off_siren">Switch OFF the siren</string>
 
     <string-array name="tab_names">
         <item>Numbers</item>

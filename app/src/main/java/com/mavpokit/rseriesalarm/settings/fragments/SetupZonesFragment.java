@@ -75,7 +75,7 @@ public class SetupZonesFragment extends BaseSettingsFragment {
 
     @OnClick(R.id.set_alarm_content_button)
     void setAlarmContentClick(){
-        String zoneNumber = String.valueOf(zoneNumberSpinner.getSelectedItem());
+        String zoneNumber = String.valueOf(zoneNumberContentSpinner.getSelectedItem());
         String alarmContent = alarmContentEdittext.getText().trim();
         if (alarmContent.length()==0){
             alarmContentEdittext.setError(getString(R.string.error_empty));

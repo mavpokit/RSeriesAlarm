@@ -14,7 +14,6 @@
         <activity
             android:name=".objects.ObjectsActivity"
             android:screenOrientation="portrait"
-            android:label="@string/objectsTitle"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.Launcher">
             <intent-filter>

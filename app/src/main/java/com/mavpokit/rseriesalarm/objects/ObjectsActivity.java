@@ -65,6 +65,7 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
     private void setupToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_activity_objects);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(getString(R.string.objectsTitle));
         setLogo(toolbar);
     }
 

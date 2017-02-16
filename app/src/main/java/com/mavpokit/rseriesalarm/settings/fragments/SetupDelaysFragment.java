@@ -12,6 +12,7 @@ import com.mavpokit.rseriesalarm.util.ColouredEditText;
 import com.mavpokit.rseriesalarm.util.MySmsAndCallManager;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import static com.mavpokit.rseriesalarm.Consts.ALARM_OBJECT;
@@ -36,12 +37,16 @@ public class SetupDelaysFragment extends BaseSettingsFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_setup_delays, container, false);
+        View view = inflater.inflate(R.layout.fragment_setup_delays, container, false);
+        ButterKnife.bind(this,view);
+
+        return view;
+
     }
 
 
     @OnClick(R.id.set_alarm_delay_button)
-    void setAlarmContentClick(){
+    void setAlarmDelayClick(){
         String alarmDelay = alarmDelayEdittext.getText();
         if (alarmDelay.length()==0){
             alarmDelayEdittext.setError(getString(R.string.error_empty));
@@ -54,7 +59,7 @@ public class SetupDelaysFragment extends BaseSettingsFragment {
     }
 
     @OnClick(R.id.set_arm_delay_button)
-    void setArmContentClick(){
+    void setArmDelayClick(){
         String armDelay = armDelayEdittext.getText();
         if (armDelay.length()==0){
             armDelayEdittext.setError(getString(R.string.error_empty));

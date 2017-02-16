@@ -103,6 +103,51 @@
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 
+    <!--framelayout is needed because button right margin don't work with wrap_content-->
+    <FrameLayout
+        android:id="@+id/switch_on_siren_button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/siren_responce_container"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp">
+
+        <Button
+            android:id="@+id/switch_on_siren_button"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_gravity="end"
+            android:textAllCaps="false"
+            android:background="@drawable/custom_button"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="@string/switch_on_siren"
+            android:textColor="@color/colorLight" />
+    </FrameLayout>
+    <!--framelayout is needed because button right margin don't work with wrap_content-->
+    <FrameLayout
+        android:id="@+id/switch_off_siren_button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/switch_on_siren_button_layout"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp">
+
+        <Button
+            android:id="@+id/switch_off_siren_button"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_gravity="end"
+            android:textAllCaps="false"
+            android:background="@drawable/custom_button"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="@string/switch_off_siren"
+            android:textColor="@color/colorLight" />
+    </FrameLayout>
+
     <com.mavpokit.rseriesalarm.util.InfoView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

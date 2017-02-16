@@ -88,7 +88,7 @@ public class SetupNumbersFragment extends BaseSettingsFragment {
         String function2 = String.valueOf(f2Spinner.getSelectedItemPosition()+1);
 
 
-        String smsMessage = alarmObject.getCode() + "A" + function1 + "#" + function2 + "#" + number + "#";
+        String smsMessage = alarmObject.getCode() + serialNumber + "A" + function1 + "#" + function2 + "#" + number + "#";
         MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
     }
 

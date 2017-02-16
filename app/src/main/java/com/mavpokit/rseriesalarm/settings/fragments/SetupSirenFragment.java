@@ -77,6 +77,18 @@ public class SetupSirenFragment extends BaseSettingsFragment {
         MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
     }
 
+    @OnClick(R.id.switch_on_siren_button)
+    void switchOnSirenClick(){
+        String smsMessage = alarmObject.getCode() + "CC";
+        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+    }
+
+    @OnClick(R.id.switch_off_siren_button)
+    void switchOffSirenClick(){
+        String smsMessage = alarmObject.getCode() + "DD";
+        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+    }
+
 
 
 
