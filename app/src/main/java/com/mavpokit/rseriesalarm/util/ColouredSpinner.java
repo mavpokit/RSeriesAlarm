@@ -54,4 +54,8 @@ public class ColouredSpinner extends FrameLayout {
     public int getSelectedItemPosition(){
         return spinner.getSelectedItemPosition();
     }
+    public String getSelectedItem(){
+        return spinner.getSelectedItem().toString();
+    }
+
 }

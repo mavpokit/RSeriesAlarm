@@ -32,7 +32,7 @@
     <string name="function1">Action when alarm occurence</string>
     <string name="function2">Action when dialing to device</string>
     <string name="make_call">Make call</string>
-    <string name="remove">remove</string>
+    <string name="remove">Remove</string>
     <string name="authorized_number">Authorized number (max 18 characters)</string>
     <string name="set_auth_num">Set Authorized numbers</string>
     <string name="remove_auth_num">Remove Authorized Number</string>
@@ -40,8 +40,8 @@
     <string name="set_zones">Setup the Zone Attribute</string>
     <string name="zone_number">Zone number</string>
     <string name="zone_attribute">Attribute code</string>
-    <string name="inquire_zone_attribute">inquire zone attribute</string>
-    <string name="inquire_auth_num">inquire authorized numbers</string>
+    <string name="inquire_zone_attribute">Inquire Zone Attribute</string>
+    <string name="inquire_auth_num">Inquire authorized numbers</string>
     <string name="alarm_content">Modify the SMS Alarm Content</string>
     <string name="zones_info_text">See Manual, section 6.5 - 6.8 for details</string>
     <string name="alarm_delay">Alarm Delay Time, sec</string>
@@ -56,6 +56,8 @@
     <string name="misc_info_text">See Manual, section 6.12, 6.14, 6.16 for details</string>
     <string name="sim_number">SIM Number: </string>
     <string name="request_callback">request callback</string>
+    <string name="error_empty_number">number cannot be empty</string>
+    <string name="error_empty">cannot be empty</string>
 
     <string-array name="tab_names">
         <item>Numbers</item>
@@ -125,8 +127,8 @@
     </string-array>
 
     <string-array name="alert_first_number">
-        <item>OFF</item>
-        <item>ON</item>
+        <item>Disabled</item>
+        <item>Enabled</item>
     </string-array>
 
 

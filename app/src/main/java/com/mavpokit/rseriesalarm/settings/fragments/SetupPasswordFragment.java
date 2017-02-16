@@ -56,7 +56,6 @@ public class SetupPasswordFragment extends BaseSettingsFragment {
             editTextPassword.setError("password must contain 4 digits!");
             return;
         }
-
         String smsMessage = alarmObject.getCode() + "P" + newPassword;
         MySmsManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
 

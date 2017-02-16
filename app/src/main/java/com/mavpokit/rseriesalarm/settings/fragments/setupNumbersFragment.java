@@ -11,10 +11,13 @@ import android.widget.Spinner;
 
 import com.mavpokit.rseriesalarm.R;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
+import com.mavpokit.rseriesalarm.util.ColouredEditText;
 import com.mavpokit.rseriesalarm.util.ColouredSpinner;
+import com.mavpokit.rseriesalarm.util.MySmsManager;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 import static com.mavpokit.rseriesalarm.Consts.ALARM_OBJECT;
 import static com.mavpokit.rseriesalarm.Consts.NUMBER;
@@ -26,6 +29,8 @@ public class SetupNumbersFragment extends BaseSettingsFragment {
 
     @BindView(R.id.spinner_serial_number)
     ColouredSpinner serialNumberSpinner;
+    @BindView(R.id.editTextAuthNumber)
+    ColouredEditText editTextAuthNumber;
     @BindView(R.id.spinner_f1)
     ColouredSpinner f1Spinner;
     @BindView(R.id.spinner_f2)
@@ -71,8 +76,38 @@ public class SetupNumbersFragment extends BaseSettingsFragment {
         adapterF2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         f2Spinner.setAdapter(adapterF2);
 
-
-
     }
+
+    @OnClick(R.id.set_auth_number_button)
+    void setAuthNumberClick(){
+        String number = editTextAuthNumber.getText();
+        if (number.length()==0){
+            editTextAuthNumber.setError(getString(R.string.error_empty));
+            return;
+        }
+        String serialNumber = String.valueOf(serialNumberSpinner.getSelectedItemPosition()+1);
+        String function1 = String.valueOf(f1Spinner.getSelectedItemPosition()+1);
+        String function2 = String.valueOf(f2Spinner.getSelectedItemPosition()+1);
+
+
+        String smsMessage = alarmObject.getCode() + "A" + function1 + "#" + function2 + "#" + number + "#";
+        MySmsManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+    }
+
+    @OnClick(R.id.inquire_auth_num_button)
+    void inquireAuthNumbersClick(){
+
+        String smsMessage = alarmObject.getCode() + "A" + "#";
+        MySmsManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+    }
+
+    @OnClick(R.id.remove_sn_button)
+    void removeAuthNumberClick(){
+        String serialNumber = String.valueOf(removeSpinner.getSelectedItemPosition()+1);
+
+        String smsMessage = alarmObject.getCode() + serialNumber + "A" + "#";
+        MySmsManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+    }
+
 
 }

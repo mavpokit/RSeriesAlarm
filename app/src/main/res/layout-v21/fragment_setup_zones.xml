@@ -46,7 +46,7 @@ tools:context="com.mavpokit.rseriesalarm.settings.fragments.SetupZonesFragment">
             android:layout_margin="1dp" />
 
         <ImageButton
-            android:id="@+id/set_auth_number_button"
+            android:id="@+id/set_zone_attr_button"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_below="@id/textview_set_zones"

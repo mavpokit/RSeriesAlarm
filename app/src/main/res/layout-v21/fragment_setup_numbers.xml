@@ -174,22 +174,17 @@
                         android:layout_marginTop="5dp"
                         android:text="@string/serial_number" />
 
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/spinner_sn_remove_layout"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignTop="@id/textview_sn_remove"
-                        android:layout_toRightOf="@id/textview_sn_remove"
-                        app:cardBackgroundColor="@color/colorAccentSecondaryLight"
-                        app:cardElevation="1dp">
 
-                        <Spinner
-                            android:id="@+id/spinner_sn_remove"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="1dp" />
+                <com.mavpokit.rseriesalarm.util.ColouredSpinner
+                    android:id="@+id/spinner_sn_remove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/textview_sn_remove"
+                    android:layout_margin="5dp"
+                    android:layout_toRightOf="@id/textview_sn_remove"
+                    android:background="@drawable/input_field_background" />
 
-                    </android.support.v7.widget.CardView>
+
 
                     <Button
                         android:id="@+id/remove_sn_button"

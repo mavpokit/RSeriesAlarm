@@ -136,6 +136,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="28dp"
                     android:layout_gravity="end"
+                    android:textAllCaps="false"
                     android:background="@drawable/custom_button"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
@@ -191,6 +192,7 @@
                         android:layout_below="@id/textview_remove_auth_num"
                         android:layout_marginTop="5dp"
                         android:background="@drawable/custom_button"
+                        android:textAllCaps="false"
                         android:text="@string/remove"
                         android:textColor="@color/colorLight"
                         app:srcCompat="@android:drawable/ic_menu_delete" />
