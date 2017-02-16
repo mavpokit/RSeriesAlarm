@@ -21,18 +21,22 @@ import com.mavpokit.rseriesalarm.Consts;
 import com.mavpokit.rseriesalarm.R;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
 
+import static com.mavpokit.rseriesalarm.Consts.CALL_PHONE_REQUSET_CODE;
 import static com.mavpokit.rseriesalarm.Consts.MY_SHARED_PREFS;
-import static com.mavpokit.rseriesalarm.Consts.NEVER_ASK_AGAIN;
+import static com.mavpokit.rseriesalarm.Consts.NEVER_ASK_AGAIN_SMS;
+import static com.mavpokit.rseriesalarm.Consts.NEVER_ASK_AGAIN_CALL;
 import static com.mavpokit.rseriesalarm.Consts.SEND_SMS_REQUSET_CODE;
 
 /**
  * Created by Alex on 02.02.2017.
  */
 
-public class MySmsManager {
+public class MySmsAndCallManager {
     private static String smsNumber;
     private static String smsMessage;
     private static Activity mActivity;
+    private static String mNumber;
+
 
     public static void sendSms(Activity activity, String number, String message) {
         smsNumber = number;
@@ -45,7 +49,22 @@ public class MySmsManager {
             smsManager.sendTextMessage(smsNumber, null, smsMessage, null, null);
             Toast.makeText(mActivity, "sending control SMS to device...", Toast.LENGTH_SHORT).show();
         } else {
-            requestPermissionWithRationale();
+            requestSmsPermissionWithRationale();
+        }
+    }
+
+    public static void callPhone(Activity activity, String number) {
+        mNumber = number.trim();
+        mActivity = activity;
+
+        if (ContextCompat.checkSelfPermission(mActivity, Manifest.permission.CALL_PHONE)
+                == PackageManager.PERMISSION_GRANTED) {
+            String uri = "tel:" + mNumber;
+            Intent intent = new Intent(Intent.ACTION_CALL);
+            intent.setData(Uri.parse(uri));
+            mActivity.startActivity(intent);
+        } else {
+            requestCallPhonePermissionWithRationale();
         }
     }
 
@@ -55,7 +74,7 @@ public class MySmsManager {
      * <p> - request after permission was once denied</p>
      * <p> - if user set newer_ask_again</p>
      */
-    private static void requestPermissionWithRationale() {
+    private static void requestSmsPermissionWithRationale() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(mActivity,
                 Manifest.permission.SEND_SMS)) {
             //permission was once denied
@@ -67,18 +86,18 @@ public class MySmsManager {
 
             SharedPreferences settings = mActivity.getSharedPreferences(MY_SHARED_PREFS, 0);
             SharedPreferences.Editor editor = settings.edit();
-            editor.putBoolean(NEVER_ASK_AGAIN, true);
+            editor.putBoolean(NEVER_ASK_AGAIN_SMS, true);
             editor.commit();
 
 
         } else {
             //if user set newer_ask_again, open Settings to grant permission
             SharedPreferences settings = mActivity.getSharedPreferences(MY_SHARED_PREFS, 0);
-            boolean newer_ask_again = settings.getBoolean(NEVER_ASK_AGAIN, false);
+            boolean newer_ask_again = settings.getBoolean(NEVER_ASK_AGAIN_SMS, false);
 
             if (newer_ask_again) {
                 Snackbar sb = Snackbar.make(mActivity.findViewById(R.id.root_view),
-                        R.string.open_settings_explanation,
+                        R.string.open_settings_explanation_sms,
                         Snackbar.LENGTH_LONG)
                         .setAction(R.string.open, v -> openSettings());
                 showSnackBar(sb);
@@ -86,6 +105,46 @@ public class MySmsManager {
             } else
                 //first request after install
                 requestSendSMS();
+        }
+    }
+
+    /**
+     * handles 3 cases:
+     * <p> - first request after install</p>
+     * <p> - request after permission was once denied</p>
+     * <p> - if user set newer_ask_again</p>
+     */
+    private static void requestCallPhonePermissionWithRationale() {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(mActivity,
+                Manifest.permission.CALL_PHONE)) {
+            //permission was once denied
+            Snackbar sb = Snackbar.make(mActivity.findViewById(R.id.root_view),
+                    R.string.open_call_permisssion_explanation,
+                    Snackbar.LENGTH_INDEFINITE)
+                    .setAction(R.string.ok, v -> requestCallPhone());
+            showSnackBar(sb);
+
+            SharedPreferences settings = mActivity.getSharedPreferences(MY_SHARED_PREFS, 0);
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putBoolean(NEVER_ASK_AGAIN_CALL, true);
+            editor.commit();
+
+
+        } else {
+            //if user set newer_ask_again, open Settings to grant permission
+            SharedPreferences settings = mActivity.getSharedPreferences(MY_SHARED_PREFS, 0);
+            boolean newer_ask_again = settings.getBoolean(NEVER_ASK_AGAIN_CALL, false);
+
+            if (newer_ask_again) {
+                Snackbar sb = Snackbar.make(mActivity.findViewById(R.id.root_view),
+                        R.string.open_settings_explanation_call,
+                        Snackbar.LENGTH_LONG)
+                        .setAction(R.string.open, v -> openSettings());
+                showSnackBar(sb);
+
+            } else
+                //first request after install
+                requestCallPhone();
         }
     }
 
@@ -98,6 +157,9 @@ public class MySmsManager {
 
     private static void requestSendSMS() {
         ActivityCompat.requestPermissions(mActivity, new String[]{Manifest.permission.SEND_SMS}, SEND_SMS_REQUSET_CODE);
+    }
+    private static void requestCallPhone() {
+        ActivityCompat.requestPermissions(mActivity, new String[]{Manifest.permission.CALL_PHONE}, CALL_PHONE_REQUSET_CODE);
     }
 
     private static void openSettings() {
@@ -124,6 +186,21 @@ public class MySmsManager {
                     showSnackBar(sb);
                 }
                 return;
+            }
+            case CALL_PHONE_REQUSET_CODE:{
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    callPhone(mActivity,mNumber);
+                } else {
+                    Snackbar sb = Snackbar.make(mActivity.findViewById(R.id.root_view),
+                            R.string.call_denied,
+                            Snackbar.LENGTH_INDEFINITE)
+                            .setAction(R.string.ok, v -> {
+                            });
+                    showSnackBar(sb);
+                }
+                return;
+
             }
 
             // other 'case' lines to check for other

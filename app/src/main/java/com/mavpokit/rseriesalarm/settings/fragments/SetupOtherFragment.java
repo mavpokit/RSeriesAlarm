@@ -10,14 +10,13 @@ import com.mavpokit.rseriesalarm.R;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
 import com.mavpokit.rseriesalarm.util.ColouredEditText;
 import com.mavpokit.rseriesalarm.util.ColouredSpinner;
-import com.mavpokit.rseriesalarm.util.MySmsManager;
+import com.mavpokit.rseriesalarm.util.MySmsAndCallManager;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import static com.mavpokit.rseriesalarm.Consts.ALARM_OBJECT;
-import static com.mavpokit.rseriesalarm.Consts.NUMBER;
 
 public class SetupOtherFragment extends BaseSettingsFragment {
     @BindView(R.id.spinner_alert_first_number)
@@ -60,7 +59,7 @@ public class SetupOtherFragment extends BaseSettingsFragment {
         String alertFirst = ( alert==0 ? "J" : "H" );
 
         String smsMessage = alarmObject.getCode() + alertFirst + "#";
-        MySmsManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
     }
 
     @OnClick(R.id.ext_pwr_alert_button)
@@ -72,7 +71,7 @@ public class SetupOtherFragment extends BaseSettingsFragment {
         }
         extPwrAlert = ((extPwrAlert.length()<2)? "0" : "") + extPwrAlert;
         String smsMessage = alarmObject.getCode() + "M" + extPwrAlert + "#";
-        MySmsManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
     }
 
     @OnClick(R.id.auto_report_button)
@@ -84,7 +83,7 @@ public class SetupOtherFragment extends BaseSettingsFragment {
         }
         autoReport = ((autoReport.length()<2)? "0" : "") + autoReport;
         String smsMessage = alarmObject.getCode() + "T" + autoReport + "#";
-        MySmsManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
     }
 
 }

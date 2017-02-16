@@ -23,8 +23,8 @@ public class AddEditObjectActivity extends AppCompatActivity implements AddEditO
     AddEditObjectContract.Presenter presenter;
 
     @BindView(R.id.editTextObjectName)    ColouredEditText editTextObjectName;
-    @BindView(R.id.editTextDeviceNumber)    ColouredEditText editTextDeviceNumber;
-    @BindView(R.id.editTextDevicePassword)    ColouredEditText editTextDevicePassword;
+    @BindView(R.id.editTextDeviceNumber)    ColouredEditText editTextObjectNumber;
+    @BindView(R.id.editTextDevicePassword)    ColouredEditText editTextObjectPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +50,8 @@ public class AddEditObjectActivity extends AppCompatActivity implements AddEditO
     private void populateEdits() {
         if (alarmObject!=null){
             editTextObjectName.setText(alarmObject.getName());
-            editTextDeviceNumber.setText(alarmObject.getNumber());
-            editTextDevicePassword.setText(alarmObject.getCode());
+            editTextObjectNumber.setText(alarmObject.getNumber());
+            editTextObjectPassword.setText(alarmObject.getCode());
         }
     }
 
@@ -65,11 +65,15 @@ public class AddEditObjectActivity extends AppCompatActivity implements AddEditO
     private void initFab() {
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(view->{
-            presenter.doneClick(
-                    editTextObjectName.getText().toString(),
-                    editTextDeviceNumber.getText().toString(),
-                    editTextDevicePassword.getText().toString()
-            );
+            String name = editTextObjectName.getText().toString().trim();
+            String number = editTextObjectNumber.getText().toString().trim();
+            String password = editTextObjectPassword.getText().toString().trim();
+
+            if (name.equals("")){editTextObjectName.setError(getString(R.string.error_empty));return;}
+            if (number.equals("")){editTextObjectNumber.setError(getString(R.string.error_empty));return;}
+            if (password.length()!=4){editTextObjectPassword.setError(getString(R.string.error_password));return;}
+
+            presenter.doneClick(name,number,password);
         });
     }
 

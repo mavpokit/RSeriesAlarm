@@ -15,8 +15,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import android.widget.Toast;
-
 import com.mavpokit.rseriesalarm.Consts;
 import com.mavpokit.rseriesalarm.R;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
@@ -27,7 +25,7 @@ import com.mavpokit.rseriesalarm.settings.fragments.SetupPasswordFragment;
 import com.mavpokit.rseriesalarm.settings.fragments.SetupSirenFragment;
 import com.mavpokit.rseriesalarm.settings.fragments.SetupZonesFragment;
 import com.mavpokit.rseriesalarm.util.AboutDialog;
-import com.mavpokit.rseriesalarm.util.MySmsManager;
+import com.mavpokit.rseriesalarm.util.MySmsAndCallManager;
 
 import butterknife.ButterKnife;
 
@@ -197,14 +195,14 @@ public class SettingsActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        MySmsManager.clearActivityReference();
+        MySmsAndCallManager.clearActivityReference();
         super.onDestroy();
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
-        MySmsManager.onRequestPermissionsResult(requestCode,permissions,grantResults);
+        MySmsAndCallManager.onRequestPermissionsResult(requestCode,permissions,grantResults);
     }
 
 

@@ -15,8 +15,10 @@ public interface Consts {
     String CODE = "CODE";
     String ALARM_OBJECT = "ALARM_OBJECT";
     int SEND_SMS_REQUSET_CODE = 77;
+    int CALL_PHONE_REQUSET_CODE = 88;
     String MY_SHARED_PREFS = "MY_SHARED_PREFS";
-    String NEVER_ASK_AGAIN = "NEVER_ASK_AGAIN";
+    String NEVER_ASK_AGAIN_SMS = "NEVER_ASK_AGAIN_SMS";
+    String NEVER_ASK_AGAIN_CALL = "NEVER_ASK_AGAIN_CALL";
 
 
 }

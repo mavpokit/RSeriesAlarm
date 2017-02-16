@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/colorPrimaryLight</item>
 
+
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -27,5 +28,8 @@
         <item name="textAllCaps">false</item>
     </style>
 
+    <style name="AppTheme.Launcher">
+        <item name="android:windowBackground">@drawable/launch_screen</item>
+    </style>
 
 </resources>

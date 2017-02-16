@@ -7,20 +7,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 
 import com.mavpokit.rseriesalarm.R;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
 import com.mavpokit.rseriesalarm.util.ColouredEditText;
 import com.mavpokit.rseriesalarm.util.ColouredSpinner;
-import com.mavpokit.rseriesalarm.util.MySmsManager;
+import com.mavpokit.rseriesalarm.util.MySmsAndCallManager;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import static com.mavpokit.rseriesalarm.Consts.ALARM_OBJECT;
-import static com.mavpokit.rseriesalarm.Consts.NUMBER;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -91,14 +89,14 @@ public class SetupNumbersFragment extends BaseSettingsFragment {
 
 
         String smsMessage = alarmObject.getCode() + "A" + function1 + "#" + function2 + "#" + number + "#";
-        MySmsManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
     }
 
     @OnClick(R.id.inquire_auth_num_button)
     void inquireAuthNumbersClick(){
 
         String smsMessage = alarmObject.getCode() + "A" + "#";
-        MySmsManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
     }
 
     @OnClick(R.id.remove_sn_button)
@@ -106,7 +104,7 @@ public class SetupNumbersFragment extends BaseSettingsFragment {
         String serialNumber = String.valueOf(removeSpinner.getSelectedItemPosition()+1);
 
         String smsMessage = alarmObject.getCode() + serialNumber + "A" + "#";
-        MySmsManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
     }
 
 

@@ -1,30 +1,23 @@
 package com.mavpokit.rseriesalarm.settings.fragments;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 
 import com.mavpokit.rseriesalarm.Consts;
 import com.mavpokit.rseriesalarm.R;
 import com.mavpokit.rseriesalarm.addeditobject.AddEditObjectActivity;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
-import com.mavpokit.rseriesalarm.objects.ObjectsActivity;
 import com.mavpokit.rseriesalarm.util.ColouredEditText;
-import com.mavpokit.rseriesalarm.util.ColouredSpinner;
-import com.mavpokit.rseriesalarm.util.MySmsManager;
+import com.mavpokit.rseriesalarm.util.MySmsAndCallManager;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import static com.mavpokit.rseriesalarm.Consts.ALARM_OBJECT;
-import static com.mavpokit.rseriesalarm.Consts.NUMBER;
 
 public class SetupPasswordFragment extends BaseSettingsFragment {
 
@@ -53,11 +46,11 @@ public class SetupPasswordFragment extends BaseSettingsFragment {
     void setPassword(){
         String newPassword = editTextPassword.getText().toString();
         if (newPassword.length()!=4){
-            editTextPassword.setError("password must contain 4 digits!");
+            editTextPassword.setError(getString(R.string.error_password));
             return;
         }
         String smsMessage = alarmObject.getCode() + "P" + newPassword;
-        MySmsManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
 
     }
 

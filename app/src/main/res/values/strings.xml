@@ -17,12 +17,15 @@
     <string name="disarm">Disarm</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="section_format">Hello World from section: %1$d</string>
-    <string name="open_settings_explanation">To send command to device, you need to grant SMS permission. Open settings, turn on SMS permission, and try again</string>
+    <string name="open_settings_explanation_sms">To send command to device, you need to grant SMS permission. Open settings, turn on SMS permission, and try again</string>
+    <string name="open_settings_explanation_call">To call to device, you need to grant CALL PHONE permission. Open settings, turn on CALL PHONE permission, and try again</string>
     <string name="open">open</string>
     <string name="open_sms_permisssion_explanation">To send command to device, you need to grant SMS permission</string>
+    <string name="open_call_permisssion_explanation">To make call, you need to grant CALL PHONE permission</string>
     <string name="open_sms_permission_dialog">Open SMS permission dialog</string>
     <string name="ok">Ok</string>
     <string name="sms_denied">Send SMS permission id denied. Control message to device can\'t be sent.</string>
+    <string name="call_denied">Call Phone permission id denied.</string>
     <string name="about">About</string>
     <string name="about_title">About</string>
     <string name="about_message">\tCreated by Mavpokit\n\twww.mavpokit.com</string>
@@ -54,10 +57,10 @@
     <string name="ext_pwr_alert">External power status alert delay, min</string>
     <string name="auto_report">Automatically report status function interval, min (00-disable)</string>
     <string name="misc_info_text">See Manual, section 6.12, 6.14, 6.16 for details</string>
-    <string name="sim_number">SIM Number: </string>
+    <string name="sim_number">SIM Number:</string>
     <string name="request_callback">request callback</string>
-    <string name="error_empty_number">number cannot be empty</string>
     <string name="error_empty">cannot be empty</string>
+    <string name="error_password">password must contain 4 digits!</string>
 
     <string-array name="tab_names">
         <item>Numbers</item>

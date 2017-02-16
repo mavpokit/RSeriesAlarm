@@ -16,7 +16,7 @@
             android:screenOrientation="portrait"
             android:label="@string/objectsTitle"
             android:launchMode="singleTop"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,7 +29,7 @@
             android:label="@string/title_activity_add_object"
             android:parentActivityName=".objects.ObjectsActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan">
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.mavpokit.rseriesalarm.objects.ObjectsActivity" />

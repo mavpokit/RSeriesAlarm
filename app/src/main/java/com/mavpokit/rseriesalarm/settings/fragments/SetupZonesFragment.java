@@ -1,27 +1,22 @@
 package com.mavpokit.rseriesalarm.settings.fragments;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 
 import com.mavpokit.rseriesalarm.R;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
 import com.mavpokit.rseriesalarm.util.ColouredEditText;
 import com.mavpokit.rseriesalarm.util.ColouredSpinner;
-import com.mavpokit.rseriesalarm.util.MySmsManager;
+import com.mavpokit.rseriesalarm.util.MySmsAndCallManager;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import static com.mavpokit.rseriesalarm.Consts.ALARM_OBJECT;
-import static com.mavpokit.rseriesalarm.Consts.NUMBER;
 
 public class SetupZonesFragment extends BaseSettingsFragment {
 
@@ -75,13 +70,13 @@ public class SetupZonesFragment extends BaseSettingsFragment {
         String attrCode = String.valueOf(zoneAttrSpinner.getSelectedItemPosition());
 
         String smsMessage = alarmObject.getCode() + "D" + zoneNumber + "#" + attrCode + "#";
-        MySmsManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
     }
 
     @OnClick(R.id.set_alarm_content_button)
     void setAlarmContentClick(){
         String zoneNumber = String.valueOf(zoneNumberSpinner.getSelectedItem());
-        String alarmContent = alarmContentEdittext.getText();
+        String alarmContent = alarmContentEdittext.getText().trim();
         if (alarmContent.length()==0){
             alarmContentEdittext.setError(getString(R.string.error_empty));
             return;
@@ -89,13 +84,13 @@ public class SetupZonesFragment extends BaseSettingsFragment {
 
 
         String smsMessage = alarmObject.getCode() + "B" + zoneNumber + "#" + alarmContent + "#";
-        MySmsManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
     }
 
     @OnClick(R.id.inquire_zone_attr_button)
     void inquireZoneAttrClick(){
         String smsMessage = alarmObject.getCode() + "D" + "#";
-        MySmsManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
     }
 
 }

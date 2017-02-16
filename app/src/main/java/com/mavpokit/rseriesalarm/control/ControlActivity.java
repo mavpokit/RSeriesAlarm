@@ -4,7 +4,6 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,7 +20,7 @@ import com.mavpokit.rseriesalarm.R;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
 import com.mavpokit.rseriesalarm.settings.SettingsActivity;
 import com.mavpokit.rseriesalarm.util.AboutDialog;
-import com.mavpokit.rseriesalarm.util.MySmsManager;
+import com.mavpokit.rseriesalarm.util.MySmsAndCallManager;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -61,7 +60,7 @@ public class ControlActivity extends AppCompatActivity {
         alarmObject = (AlarmObject) getIntent().getSerializableExtra(Consts.ALARM_OBJECT);
 
         setupToolbar();
-        textViewDeviceNumber.setText(getString(R.string.sim_number) + alarmObject.getNumber());
+        textViewDeviceNumber.setText(getString(R.string.sim_number) + " " + alarmObject.getNumber());
     }
 
     private void setupToolbar() {
@@ -77,46 +76,30 @@ public class ControlActivity extends AppCompatActivity {
     @OnClick(R.id.arm_button)
     void armButtonClick() {
         String smsMessage = alarmObject.getCode() + "AA";
-        MySmsManager.sendSms(this, alarmObject.getNumber(),smsMessage);
+        MySmsAndCallManager.sendSms(this, alarmObject.getNumber(),smsMessage);
     }
 
     @OnClick(R.id.disarm_button)
     void disarmButtonClick() {
         String smsMessage = alarmObject.getCode() + "BB";
-        MySmsManager.sendSms(this, alarmObject.getNumber(),smsMessage);
+        MySmsAndCallManager.sendSms(this, alarmObject.getNumber(),smsMessage);
     }
 
     @OnClick(R.id.request_status_button)
     void requstStatusButtonClick() {
         String smsMessage = alarmObject.getCode() + "EE";
-        MySmsManager.sendSms(this, alarmObject.getNumber(),smsMessage);
+        MySmsAndCallManager.sendSms(this, alarmObject.getNumber(),smsMessage);
     }
 
     @OnClick(R.id.call_button)
     void callButtonClick() {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-            Toast.makeText(this, "Call permission is not granted", Toast.LENGTH_LONG).show();
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        } else {
-            String uri = "tel:" + alarmObject.getNumber().trim();
-            Intent intent = new Intent(Intent.ACTION_CALL);
-            intent.setData(Uri.parse(uri));
-            startActivity(intent);
-        }
-
+        MySmsAndCallManager.callPhone(this,alarmObject.getNumber());
     }
 
     @OnClick(R.id.callback_button)
     void callbackButtonClick() {
         String smsMessage = alarmObject.getCode() + "K" + "#";
-        MySmsManager.sendSms(this, alarmObject.getNumber(),smsMessage);
+        MySmsAndCallManager.sendSms(this, alarmObject.getNumber(),smsMessage);
     }
 
 
@@ -130,14 +113,14 @@ public class ControlActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        MySmsManager.clearActivityReference();
+        MySmsAndCallManager.clearActivityReference();
         super.onDestroy();
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
-        MySmsManager.onRequestPermissionsResult(requestCode,permissions,grantResults);
+        MySmsAndCallManager.onRequestPermissionsResult(requestCode,permissions,grantResults);
     }
 
     @Override

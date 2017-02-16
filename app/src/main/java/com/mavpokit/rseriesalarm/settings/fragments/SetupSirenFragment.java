@@ -1,27 +1,22 @@
 package com.mavpokit.rseriesalarm.settings.fragments;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 
 import com.mavpokit.rseriesalarm.R;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
 import com.mavpokit.rseriesalarm.util.ColouredEditText;
 import com.mavpokit.rseriesalarm.util.ColouredSpinner;
-import com.mavpokit.rseriesalarm.util.MySmsManager;
+import com.mavpokit.rseriesalarm.util.MySmsAndCallManager;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import static com.mavpokit.rseriesalarm.Consts.ALARM_OBJECT;
-import static com.mavpokit.rseriesalarm.Consts.NUMBER;
 
 public class SetupSirenFragment extends BaseSettingsFragment {
 
@@ -70,7 +65,7 @@ public class SetupSirenFragment extends BaseSettingsFragment {
         sirenTime = ((sirenTime.length()<3)? "0" : "") + sirenTime;
 
         String smsMessage = alarmObject.getCode() + "E" + sirenTime + "#";
-        MySmsManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
     }
 
     @OnClick(R.id.set_siren_responce_button)
@@ -79,7 +74,7 @@ public class SetupSirenFragment extends BaseSettingsFragment {
         String sirenResponce = (responce==0 ? "OFF" : "ON");
 
         String smsMessage = alarmObject.getCode() + sirenResponce + "#";
-        MySmsManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
     }
 
 
