@@ -10,6 +10,7 @@ import com.mavpokit.rseriesalarm.Consts;
 import com.mavpokit.rseriesalarm.R;
 import com.mavpokit.rseriesalarm.addeditobject.AddEditObjectActivity;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
+import com.mavpokit.rseriesalarm.data.source.Repository;
 import com.mavpokit.rseriesalarm.util.ColouredEditText;
 import com.mavpokit.rseriesalarm.util.MySmsAndCallManager;
 
@@ -24,11 +25,11 @@ public class SetupPasswordFragment extends BaseSettingsFragment {
     @BindView(R.id.edittext_password)
     ColouredEditText editTextPassword;
 
-    public static BaseSettingsFragment newInstance(AlarmObject alarmObject) {
+    public static BaseSettingsFragment newInstance() {
         BaseSettingsFragment fragment = new SetupPasswordFragment();
-        Bundle args = new Bundle();
-        args.putSerializable(ALARM_OBJECT,alarmObject);
-        fragment.setArguments(args);
+//        Bundle args = new Bundle();
+//        args.putSerializable(ALARM_OBJECT,alarmObject);
+//        fragment.setArguments(args);
         return fragment;
 
     }
@@ -49,15 +50,15 @@ public class SetupPasswordFragment extends BaseSettingsFragment {
             editTextPassword.setError(getString(R.string.error_password));
             return;
         }
-        String smsMessage = alarmObject.getCode() + "P" + newPassword;
-        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        String smsMessage = "P" + newPassword;
+        MySmsAndCallManager.sendSms(getActivity(), smsMessage);
 
     }
 
     @OnClick(R.id.launch_edit_password_button)
     void luanch_edit(){
         Intent intent = new Intent(getActivity(), AddEditObjectActivity.class);
-        intent.putExtra(Consts.ALARM_OBJECT,alarmObject);
+        intent.putExtra(Consts.ALARM_OBJECT, Repository.getCurrentObject());
         startActivityForResult(intent, Consts.REQUEST_CODE_ADD_EDIT_OBJECT);
     }
 }

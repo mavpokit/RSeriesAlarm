@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.mavpokit.rseriesalarm.Consts;
 import com.mavpokit.rseriesalarm.R;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
+import com.mavpokit.rseriesalarm.data.source.Repository;
 
 import static com.mavpokit.rseriesalarm.Consts.CALL_PHONE_REQUSET_CODE;
 import static com.mavpokit.rseriesalarm.Consts.MY_SHARED_PREFS;
@@ -38,23 +39,25 @@ public class MySmsAndCallManager {
     private static String mNumber;
 
 
-    public static void sendSms(Activity activity, String number, String message) {
-        smsNumber = number;
+    public static void sendSms(Activity activity, String message) {
+        AlarmObject alarmObject = Repository.getCurrentObject();
+        smsNumber = alarmObject.getNumber();
         smsMessage = message;
         mActivity = activity;
 
         if (ContextCompat.checkSelfPermission(mActivity, Manifest.permission.SEND_SMS)
                 == PackageManager.PERMISSION_GRANTED) {
             SmsManager smsManager = SmsManager.getDefault();
-            smsManager.sendTextMessage(smsNumber, null, smsMessage, null, null);
+            smsManager.sendTextMessage(smsNumber, null, alarmObject.getCode()+smsMessage, null, null);
             Toast.makeText(mActivity, R.string.sending_control_sms, Toast.LENGTH_SHORT).show();
         } else {
             requestSmsPermissionWithRationale();
         }
     }
 
-    public static void callPhone(Activity activity, String number) {
-        mNumber = number.trim();
+    public static void callPhone(Activity activity) {
+        AlarmObject alarmObject = Repository.getCurrentObject();
+        mNumber = alarmObject.getNumber().trim();
         mActivity = activity;
 
         if (ContextCompat.checkSelfPermission(mActivity, Manifest.permission.CALL_PHONE)
@@ -176,7 +179,7 @@ public class MySmsAndCallManager {
             case SEND_SMS_REQUSET_CODE: {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    sendSms(mActivity, smsNumber, smsMessage);
+                    sendSms(mActivity, smsMessage);
                 } else {
                     Snackbar sb = Snackbar.make(mActivity.findViewById(R.id.root_view),
                             R.string.sms_denied,
@@ -190,7 +193,7 @@ public class MySmsAndCallManager {
             case CALL_PHONE_REQUSET_CODE:{
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    callPhone(mActivity,mNumber);
+                    callPhone(mActivity);
                 } else {
                     Snackbar sb = Snackbar.make(mActivity.findViewById(R.id.root_view),
                             R.string.call_denied,

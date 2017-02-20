@@ -25,11 +25,11 @@ public class SetupSirenFragment extends BaseSettingsFragment {
     @BindView(R.id.edittext_siren_time)
     ColouredEditText sirenTimeEdittext;
 
-    public static BaseSettingsFragment newInstance(AlarmObject alarmObject) {
+    public static BaseSettingsFragment newInstance() {
         BaseSettingsFragment fragment = new SetupSirenFragment();
-        Bundle args = new Bundle();
-        args.putSerializable(ALARM_OBJECT,alarmObject);
-        fragment.setArguments(args);
+//        Bundle args = new Bundle();
+//        args.putSerializable(ALARM_OBJECT,alarmObject);
+//        fragment.setArguments(args);
         return fragment;
     }
 
@@ -64,8 +64,8 @@ public class SetupSirenFragment extends BaseSettingsFragment {
         sirenTime = ((sirenTime.length()<2)? "0" : "") + sirenTime;
         sirenTime = ((sirenTime.length()<3)? "0" : "") + sirenTime;
 
-        String smsMessage = alarmObject.getCode() + "E" + sirenTime + "#";
-        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        String smsMessage = "E" + sirenTime + "#";
+        MySmsAndCallManager.sendSms(getActivity(), smsMessage);
     }
 
     @OnClick(R.id.set_siren_responce_button)
@@ -73,20 +73,20 @@ public class SetupSirenFragment extends BaseSettingsFragment {
         int responce = sirenResponceSpinner.getSelectedItemPosition();
         String sirenResponce = (responce==0 ? "OFF" : "ON");
 
-        String smsMessage = alarmObject.getCode() + sirenResponce + "#";
-        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        String smsMessage = sirenResponce + "#";
+        MySmsAndCallManager.sendSms(getActivity(), smsMessage);
     }
 
     @OnClick(R.id.switch_on_siren_button)
     void switchOnSirenClick(){
-        String smsMessage = alarmObject.getCode() + "CC";
-        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        String smsMessage = "CC";
+        MySmsAndCallManager.sendSms(getActivity(), smsMessage);
     }
 
     @OnClick(R.id.switch_off_siren_button)
     void switchOffSirenClick(){
-        String smsMessage = alarmObject.getCode() + "DD";
-        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        String smsMessage = "DD";
+        MySmsAndCallManager.sendSms(getActivity(), smsMessage);
     }
 
 

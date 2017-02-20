@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.mavpokit.rseriesalarm.Consts;
 import com.mavpokit.rseriesalarm.R;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
+import com.mavpokit.rseriesalarm.data.source.Repository;
 import com.mavpokit.rseriesalarm.settings.SettingsActivity;
 import com.mavpokit.rseriesalarm.util.AboutDialog;
 import com.mavpokit.rseriesalarm.util.MySmsAndCallManager;
@@ -49,18 +50,14 @@ public class ControlActivity extends AppCompatActivity {
     TextView textViewDeviceNumber;
 
 
-    AlarmObject alarmObject;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_control);
         ButterKnife.bind(this);
 
-        alarmObject = (AlarmObject) getIntent().getSerializableExtra(Consts.ALARM_OBJECT);
-
         setupToolbar();
-        textViewDeviceNumber.setText(getString(R.string.sim_number) + " " + alarmObject.getNumber());
+
     }
 
     private void setupToolbar() {
@@ -68,45 +65,50 @@ public class ControlActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        setLogo(toolbar);
-        checkNotNull(alarmObject);
-        getSupportActionBar().setTitle(alarmObject.getName());
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        AlarmObject alarmObject = Repository.getCurrentObject();
+        checkNotNull(alarmObject);
+        getSupportActionBar().setTitle(alarmObject.getName());
+        textViewDeviceNumber.setText(getString(R.string.sim_number) + " " + alarmObject.getNumber());
+    }
 
     @OnClick(R.id.arm_button)
     void armButtonClick() {
-        String smsMessage = alarmObject.getCode() + "AA";
-        MySmsAndCallManager.sendSms(this, alarmObject.getNumber(),smsMessage);
+        String smsMessage = "AA";
+        MySmsAndCallManager.sendSms(this, smsMessage);
     }
 
     @OnClick(R.id.disarm_button)
     void disarmButtonClick() {
-        String smsMessage = alarmObject.getCode() + "BB";
-        MySmsAndCallManager.sendSms(this, alarmObject.getNumber(),smsMessage);
+        String smsMessage = "BB";
+        MySmsAndCallManager.sendSms(this, smsMessage);
     }
 
     @OnClick(R.id.request_status_button)
     void requstStatusButtonClick() {
-        String smsMessage = alarmObject.getCode() + "EE";
-        MySmsAndCallManager.sendSms(this, alarmObject.getNumber(),smsMessage);
+        String smsMessage = "EE";
+        MySmsAndCallManager.sendSms(this, smsMessage);
     }
 
     @OnClick(R.id.call_button)
     void callButtonClick() {
-        MySmsAndCallManager.callPhone(this,alarmObject.getNumber());
+        MySmsAndCallManager.callPhone(this);
     }
 
     @OnClick(R.id.callback_button)
     void callbackButtonClick() {
-        String smsMessage = alarmObject.getCode() + "K" + "#";
-        MySmsAndCallManager.sendSms(this, alarmObject.getNumber(),smsMessage);
+        String smsMessage = "K" + "#";
+        MySmsAndCallManager.sendSms(this, smsMessage);
     }
 
 
     @OnClick(R.id.setup_button)
     void settingsButtonClick() {
         Intent intent = new Intent(this, SettingsActivity.class);
-        intent.putExtra(Consts.ALARM_OBJECT, alarmObject);
         startActivity(intent);
     }
 

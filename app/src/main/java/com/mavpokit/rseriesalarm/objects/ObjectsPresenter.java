@@ -3,6 +3,7 @@ package com.mavpokit.rseriesalarm.objects;
 import com.mavpokit.rseriesalarm.Consts;
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
 import com.mavpokit.rseriesalarm.data.source.IRepository;
+import com.mavpokit.rseriesalarm.data.source.Repository;
 
 import java.util.List;
 
@@ -41,7 +42,8 @@ public class ObjectsPresenter implements ObjectsContract.Presenter {
 
     @Override
     public void onObjectClick(AlarmObject object) {
-        view.openObject(object);
+        Repository.setCurrentObject(object);
+        view.openObject();
     }
 
     @Override

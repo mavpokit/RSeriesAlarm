@@ -25,11 +25,12 @@ public class SetupDelaysFragment extends BaseSettingsFragment {
     ColouredEditText armDelayEdittext;
 
 
-    public static BaseSettingsFragment newInstance(AlarmObject alarmObject) {
+//    public static BaseSettingsFragment newInstance(AlarmObject alarmObject) {
+    public static BaseSettingsFragment newInstance() {
         BaseSettingsFragment fragment = new SetupDelaysFragment();
-        Bundle args = new Bundle();
-        args.putSerializable(ALARM_OBJECT,alarmObject);
-        fragment.setArguments(args);
+//        Bundle args = new Bundle();
+//        args.putSerializable(ALARM_OBJECT,alarmObject);
+//        fragment.setArguments(args);
         return fragment;
     }
 
@@ -54,8 +55,8 @@ public class SetupDelaysFragment extends BaseSettingsFragment {
         }
         alarmDelay = ((alarmDelay.length()<2)? "0" : "") + alarmDelay;
         alarmDelay = ((alarmDelay.length()<3)? "0" : "") + alarmDelay;
-        String smsMessage = alarmObject.getCode() + "F" + alarmDelay + "#";
-        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        String smsMessage = "F" + alarmDelay + "#";
+        MySmsAndCallManager.sendSms(getActivity(),smsMessage);
     }
 
     @OnClick(R.id.set_arm_delay_button)
@@ -66,7 +67,7 @@ public class SetupDelaysFragment extends BaseSettingsFragment {
             return;
         }
         armDelay = ((armDelay.length()<2)? "0" : "") + armDelay;
-        String smsMessage = alarmObject.getCode() + "G" + armDelay + "#";
-        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        String smsMessage = "G" + armDelay + "#";
+        MySmsAndCallManager.sendSms(getActivity(), smsMessage);
     }
 }

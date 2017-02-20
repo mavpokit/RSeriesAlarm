@@ -146,9 +146,8 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
     }
 
     @Override
-    public void openObject(AlarmObject object) {
+    public void openObject() {
         Intent intent = new Intent(this, ControlActivity.class);
-        intent.putExtra(Consts.ALARM_OBJECT,object);
         startActivity(intent);
     }
 

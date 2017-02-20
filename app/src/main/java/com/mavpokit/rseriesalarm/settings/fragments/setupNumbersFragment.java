@@ -37,11 +37,11 @@ public class SetupNumbersFragment extends BaseSettingsFragment {
     ColouredSpinner removeSpinner;
 
 
-    public static BaseSettingsFragment newInstance(AlarmObject alarmObject) {
+    public static BaseSettingsFragment newInstance() {
         BaseSettingsFragment fragment = new SetupNumbersFragment();
-        Bundle args = new Bundle();
-        args.putSerializable(ALARM_OBJECT,alarmObject);
-        fragment.setArguments(args);
+//        Bundle args = new Bundle();
+//        args.putSerializable(ALARM_OBJECT,alarmObject);
+//        fragment.setArguments(args);
         return fragment;
     }
 
@@ -88,23 +88,23 @@ public class SetupNumbersFragment extends BaseSettingsFragment {
         String function2 = String.valueOf(f2Spinner.getSelectedItemPosition()+1);
 
 
-        String smsMessage = alarmObject.getCode() + serialNumber + "A" + function1 + "#" + function2 + "#" + number + "#";
-        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        String smsMessage = serialNumber + "A" + function1 + "#" + function2 + "#" + number + "#";
+        MySmsAndCallManager.sendSms(getActivity(), smsMessage);
     }
 
     @OnClick(R.id.inquire_auth_num_button)
     void inquireAuthNumbersClick(){
 
-        String smsMessage = alarmObject.getCode() + "A" + "#";
-        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        String smsMessage = "A" + "#";
+        MySmsAndCallManager.sendSms(getActivity(), smsMessage);
     }
 
     @OnClick(R.id.remove_sn_button)
     void removeAuthNumberClick(){
         String serialNumber = String.valueOf(removeSpinner.getSelectedItemPosition()+1);
 
-        String smsMessage = alarmObject.getCode() + serialNumber + "A" + "#";
-        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        String smsMessage = serialNumber + "A" + "#";
+        MySmsAndCallManager.sendSms(getActivity(), smsMessage);
     }
 
 

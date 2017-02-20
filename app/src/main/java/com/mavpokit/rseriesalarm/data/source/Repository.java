@@ -17,6 +17,8 @@ public class Repository implements IRepository {
     private static Repository instance;
     private static List<AlarmObject> alarmObjects = new ArrayList<>();
 
+    private static AlarmObject currentAlarmObject;
+
     private Repository(IRepository sqliteDatasource){
         this.sqliteDatasource = sqliteDatasource;
     };
@@ -63,5 +65,13 @@ public class Repository implements IRepository {
     @Override
     public void deleteObject(String id) {
         sqliteDatasource.deleteObject(id);
+    }
+
+    public static void setCurrentObject(AlarmObject object) {
+        currentAlarmObject=object;
+    }
+
+    public static AlarmObject getCurrentObject() {
+        return currentAlarmObject;
     }
 }

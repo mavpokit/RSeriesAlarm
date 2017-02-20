@@ -26,11 +26,11 @@ public class SetupOtherFragment extends BaseSettingsFragment {
     @BindView(R.id.edittext_auto_report)
     ColouredEditText autoReportEdittext;
 
-    public static BaseSettingsFragment newInstance(AlarmObject alarmObject) {
+    public static BaseSettingsFragment newInstance() {
         BaseSettingsFragment fragment = new SetupOtherFragment();
-        Bundle args = new Bundle();
-        args.putSerializable(ALARM_OBJECT,alarmObject);
-        fragment.setArguments(args);
+//        Bundle args = new Bundle();
+//        args.putSerializable(ALARM_OBJECT,alarmObject);
+//        fragment.setArguments(args);
         return fragment;
     }
 
@@ -58,8 +58,8 @@ public class SetupOtherFragment extends BaseSettingsFragment {
         int alert = alertFirstSpinner.getSelectedItemPosition();
         String alertFirst = ( alert==0 ? "J" : "H" );
 
-        String smsMessage = alarmObject.getCode() + alertFirst + "#";
-        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        String smsMessage = alertFirst + "#";
+        MySmsAndCallManager.sendSms(getActivity(), smsMessage);
     }
 
     @OnClick(R.id.ext_pwr_alert_button)
@@ -70,8 +70,8 @@ public class SetupOtherFragment extends BaseSettingsFragment {
             return;
         }
         extPwrAlert = ((extPwrAlert.length()<2)? "0" : "") + extPwrAlert;
-        String smsMessage = alarmObject.getCode() + "M" + extPwrAlert + "#";
-        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        String smsMessage = "M" + extPwrAlert + "#";
+        MySmsAndCallManager.sendSms(getActivity(), smsMessage);
     }
 
     @OnClick(R.id.auto_report_button)
@@ -82,8 +82,8 @@ public class SetupOtherFragment extends BaseSettingsFragment {
             return;
         }
         autoReport = ((autoReport.length()<2)? "0" : "") + autoReport;
-        String smsMessage = alarmObject.getCode() + "T" + autoReport + "#";
-        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        String smsMessage = "T" + autoReport + "#";
+        MySmsAndCallManager.sendSms(getActivity(), smsMessage);
     }
 
 }

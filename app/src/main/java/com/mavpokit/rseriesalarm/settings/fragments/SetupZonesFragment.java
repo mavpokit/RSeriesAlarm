@@ -30,11 +30,11 @@ public class SetupZonesFragment extends BaseSettingsFragment {
     ColouredEditText alarmContentEdittext;
 
 
-    public static BaseSettingsFragment newInstance(AlarmObject alarmObject) {
+    public static BaseSettingsFragment newInstance() {
         BaseSettingsFragment fragment = new SetupZonesFragment();
-        Bundle args = new Bundle();
-        args.putSerializable(ALARM_OBJECT,alarmObject);
-        fragment.setArguments(args);
+//        Bundle args = new Bundle();
+//        args.putSerializable(ALARM_OBJECT,alarmObject);
+//        fragment.setArguments(args);
         return fragment;
     }
 
@@ -69,8 +69,8 @@ public class SetupZonesFragment extends BaseSettingsFragment {
         String zoneNumber = String.valueOf(zoneNumberSpinner.getSelectedItem());
         String attrCode = String.valueOf(zoneAttrSpinner.getSelectedItemPosition());
 
-        String smsMessage = alarmObject.getCode() + "D" + zoneNumber + "#" + attrCode + "#";
-        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        String smsMessage = "D" + zoneNumber + "#" + attrCode + "#";
+        MySmsAndCallManager.sendSms(getActivity(), smsMessage);
     }
 
     @OnClick(R.id.set_alarm_content_button)
@@ -83,14 +83,14 @@ public class SetupZonesFragment extends BaseSettingsFragment {
         }
 
 
-        String smsMessage = alarmObject.getCode() + "B" + zoneNumber + "#" + alarmContent + "#";
-        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        String smsMessage = "B" + zoneNumber + "#" + alarmContent + "#";
+        MySmsAndCallManager.sendSms(getActivity(), smsMessage);
     }
 
     @OnClick(R.id.inquire_zone_attr_button)
     void inquireZoneAttrClick(){
-        String smsMessage = alarmObject.getCode() + "D" + "#";
-        MySmsAndCallManager.sendSms(getActivity(), alarmObject.getNumber(),smsMessage);
+        String smsMessage = "D" + "#";
+        MySmsAndCallManager.sendSms(getActivity(), smsMessage);
     }
 
 }

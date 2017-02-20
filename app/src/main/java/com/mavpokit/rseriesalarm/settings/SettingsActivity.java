@@ -31,7 +31,7 @@ import butterknife.ButterKnife;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    AlarmObject alarmObject;
+
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -41,8 +41,6 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         ButterKnife.bind(this);
-
-        alarmObject = (AlarmObject) getIntent().getSerializableExtra(Consts.ALARM_OBJECT);
 
         setupToolbar();
 
@@ -55,7 +53,7 @@ public class SettingsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        setLogo(toolbar);
-        getSupportActionBar().setTitle(alarmObject.getName());
+
     }
 
     @Override
@@ -149,12 +147,12 @@ public class SettingsActivity extends AppCompatActivity {
         return new FragmentPagerAdapter(getSupportFragmentManager()) {
 
             private Fragment[] fragments = new Fragment[]{
-                    SetupNumbersFragment.newInstance(alarmObject),
-                    SetupZonesFragment.newInstance(alarmObject),
-                    SetupDelaysFragment.newInstance(alarmObject),
-                    SetupSirenFragment.newInstance(alarmObject),
-                    SetupOtherFragment.newInstance(alarmObject),
-                    SetupPasswordFragment.newInstance(alarmObject)};
+                    SetupNumbersFragment.newInstance(),
+                    SetupZonesFragment.newInstance(),
+                    SetupDelaysFragment.newInstance(),
+                    SetupSirenFragment.newInstance(),
+                    SetupOtherFragment.newInstance(),
+                    SetupPasswordFragment.newInstance()};
 
 
             private static final String TAG = "-----PagerAdapter-----";

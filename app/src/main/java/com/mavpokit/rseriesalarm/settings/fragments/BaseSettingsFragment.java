@@ -16,7 +16,7 @@ import static com.mavpokit.rseriesalarm.Consts.NUMBER;
  */
 
 public abstract class BaseSettingsFragment extends Fragment {
-    protected AlarmObject alarmObject;
+//    protected AlarmObject alarmObject;
 
     public BaseSettingsFragment() {
         // Required empty public constructor
@@ -30,13 +30,13 @@ public abstract class BaseSettingsFragment extends Fragment {
 //        return fragment;
 //    }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            alarmObject = (AlarmObject) (getArguments().getSerializable(ALARM_OBJECT)) ;
-        }
-    }
+//    @Override
+//    public void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        if (getArguments() != null) {
+//            alarmObject = (AlarmObject) (getArguments().getSerializable(ALARM_OBJECT)) ;
+//        }
+//    }
 
 
 

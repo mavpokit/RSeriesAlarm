@@ -2,6 +2,7 @@ package com.mavpokit.rseriesalarm.addeditobject;
 
 import com.mavpokit.rseriesalarm.data.model.AlarmObject;
 import com.mavpokit.rseriesalarm.data.source.IRepository;
+import com.mavpokit.rseriesalarm.data.source.Repository;
 
 /**
  * Created by Alex on 26.01.2017.
@@ -25,7 +26,11 @@ public class AddEditObjectPresenter implements AddEditObjectContract.Presenter {
         if (id == null)
             repository.insertObject(new AlarmObject(null, name, number, password));
         else
-            repository.updateObject(new AlarmObject(id, name, number, password));
+        {
+            AlarmObject alarmObject = new AlarmObject(id, name, number, password);
+            Repository.setCurrentObject(alarmObject);
+            repository.updateObject(alarmObject);
+        }
 
         view.closeAndSetResultOk();
 

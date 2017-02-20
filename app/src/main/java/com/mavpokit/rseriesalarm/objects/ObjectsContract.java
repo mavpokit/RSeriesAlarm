@@ -12,7 +12,7 @@ public interface ObjectsContract {
     interface View{
         void showObjects(List<AlarmObject> alarmObjects);
         void runAddObjectView();
-        void openObject(AlarmObject object);
+        void openObject();
         void showNoObjectsText();
         void showEditDeleteDialog(AlarmObject object);
         void showEditObject(AlarmObject object);
