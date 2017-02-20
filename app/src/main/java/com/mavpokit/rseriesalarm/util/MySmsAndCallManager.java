@@ -47,7 +47,7 @@ public class MySmsAndCallManager {
                 == PackageManager.PERMISSION_GRANTED) {
             SmsManager smsManager = SmsManager.getDefault();
             smsManager.sendTextMessage(smsNumber, null, smsMessage, null, null);
-            Toast.makeText(mActivity, "sending control SMS to device...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mActivity, R.string.sending_control_sms, Toast.LENGTH_SHORT).show();
         } else {
             requestSmsPermissionWithRationale();
         }

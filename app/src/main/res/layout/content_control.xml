@@ -35,7 +35,7 @@
             app:cardElevation="5dp"
 
             android:layout_weight="1"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="120dp">
 
             <Button
@@ -60,7 +60,7 @@
             app:cardElevation="5dp"
 
             android:layout_weight="1"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="120dp">
 
             <Button
@@ -95,7 +95,7 @@
             android:background="@drawable/custom_button"
             android:drawableLeft="@drawable/ic_request_wrapped"
             android:paddingLeft="20dp"
-            android:text="Request status"
+            android:text="@string/request_status"
             android:textColor="@color/colorLight" />
 
         <Button

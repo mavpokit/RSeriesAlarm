@@ -33,7 +33,7 @@
 
             <com.mavpokit.rseriesalarm.util.ColouredSpinner
                 android:id="@+id/spinner_alert_first_number"
-                android:layout_width="70dp"
+                android:layout_width="75dp"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/alert_first_number_button"
@@ -80,11 +80,11 @@
 
             <com.mavpokit.rseriesalarm.util.ColouredEditText
                 android:id="@+id/edittext_ext_pwr_alert"
-                android:layout_width="70dp"
+                android:layout_width="75dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/ext_pwr_alert_button"
+                android:layout_margin="1dp"
                 android:background="@drawable/input_field_background"
                 app:inputType="number"
                 app:maxLength="2"
@@ -132,9 +132,9 @@
 
             <com.mavpokit.rseriesalarm.util.ColouredEditText
                 android:id="@+id/edittext_auto_report"
-                android:layout_width="70dp"
+                android:layout_width="75dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_margin="1dp"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/auto_report_button"
                 android:background="@drawable/input_field_background"

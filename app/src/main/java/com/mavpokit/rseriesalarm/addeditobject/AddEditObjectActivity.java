@@ -34,13 +34,15 @@ public class AddEditObjectActivity extends AppCompatActivity implements AddEditO
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_activity_add_object);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        setLogo(toolbar);
+//        setLogo(toolbar);
 
         initFab();
 
         //if alarmObject=null, than we insert new object
         alarmObject = (AlarmObject) getIntent().getSerializableExtra(Consts.ALARM_OBJECT);
         if (alarmObject!=null) id=alarmObject.getId();
+
+        if (alarmObject!=null) getSupportActionBar().setTitle(getString(R.string.title_activity_edit_object));
 
         populateEdits();
 

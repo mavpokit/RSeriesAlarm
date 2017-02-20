@@ -1,63 +1,79 @@
 <resources>
     <string name="app_name">R5 Alarm</string>
-    <string name="action_about">About</string>
-    <string name="objectListActivityName">Alarm object list</string>
-    <string name="title_activity_add_object">Add Alarm Object</string>
-    <string name="no_objects_text">No objects. To add object, press \"plus\" button</string>
-    <string name="edit_delete_text">To open edit/delete object dialog, long tap on object</string>
-    <string name="objectsTitle">Alarm objects</string>
-    <string name="object_name">Object Name</string>
-    <string name="device_number">Device SIM number</string>
-    <string name="device_password">Device Password</string>
-    <string name="edit_delete_dialog_message">Make your choise</string>
-    <string name="edit">Edit</string>
-    <string name="delete">Delete</string>
-    <string name="cancel">cancel</string>
-    <string name="arm">Arm</string>
-    <string name="disarm">Disarm</string>
+    <string name="action_about">О приложении</string>
+    <string name="objectListActivityName">Список обьектов</string>
+    <string name="title_activity_add_object">Добавление обьекта</string>
+    <string name="title_activity_edit_object">Редактировать обьект</string>
+    <string name="no_objects_text">Нет обеьктов. Для добавления нажмите \"плюс\"</string>
+    <string name="edit_delete_text">Для редактирования или удаления обекта, долго нажмите на нём</string>
+    <string name="objectsTitle">Охраняемые обьекты</string>
+    <string name="object_name">Имя оьекта</string>
+    <string name="device_number">Номер SIM карты устройства</string>
+    <string name="device_password">Пароль устройста</string>
+    <string name="edit_delete_dialog_message">Сделайте выбор</string>
+    <string name="edit">Редактировать</string>
+    <string name="delete">Удалить</string>
+    <string name="cancel">Отмена</string>
+    <string name="arm">Поставить на охрану</string>
+    <string name="disarm">Снять с охраны</string>
     <string name="title_activity_settings">SettingsActivity</string>
-    <string name="section_format">Hello World from section: %1$d</string>
-    <string name="open_settings_explanation">To send command to device, you need to grant SMS permission. Open settings, turn on SMS permission, and try again</string>
-    <string name="open">open</string>
-    <string name="open_sms_permisssion_explanation">To send command to device, you need to grant SMS permission</string>
+    <string name="open_settings_explanation_sms">Для отправки команды, нужно включить разрешение на отправку SMS в настройках</string>
+    <string name="open_settings_explanation_call">Для звонка на устройство, нужно включить соответствующее разрешение в настройках</string>
+    <string name="open">открыть</string>
+    <string name="open_sms_permisssion_explanation">Для отправки команды, нужно включить разрешение на отправку SMS</string>
+    <string name="open_call_permisssion_explanation">Для звонка на устройство, нужно включить разрешение на звонки</string>
     <string name="open_sms_permission_dialog">Open SMS permission dialog</string>
     <string name="ok">Ok</string>
-    <string name="sms_denied">Send SMS permission id denied. Control message to device can\'t be sent.</string>
-    <string name="about">About</string>
-    <string name="about_title">About</string>
-    <string name="about_message">\tCreated by Mavpokit\n\twww.mavpokit.com</string>
-    <string name="setup">Setup</string>
-    <string name="new_password">Enter new password for device. After SMS confirmation from device, don\'t forget to change password in Objects settings</string>
-    <string name="serial_number">Serial number</string>
+    <string name="sms_denied">Отправка SMS запрещена. Управлящую команду послать невозможно</string>
+    <string name="call_denied">Звонки из приложения запрещены</string>
+    <string name="about">О приложении</string>
+    <string name="about_title">О приложении</string>
+    <string name="about_message">\tСоздано Mavpokit-ом\n\twww.mavpokit.com</string>
+    <string name="setup">Настройки</string>
+    <string name="new_password">Введите новый пароль для устройства. После SMS потдтверждения от устройства, не забудьте изменить пароль в свойствах обьекта *</string>
+    <string name="serial_number">Серийный номер</string>
     <string name="function1">Действие при срабатывании сигнализации</string>
     <string name="function2">Действие при звонке на устройство</string>
-    <string name="make_call">Make call</string>
-    <string name="remove">remove</string>
-    <string name="authorized_number">Authorized number (max 18 characters)</string>
-    <string name="set_auth_num">Set Authorized numbers</string>
-    <string name="remove_auth_num">Remove Authorized Number</string>
-    <string name="numbers_info_text">See Manual, section 6.2 - 6.4 for details</string>
-    <string name="set_zones">Setup the Zone Attribute</string>
-    <string name="zone_number">Zone number</string>
-    <string name="zone_attribute">Attribute code</string>
-    <string name="inquire_zone_attribute">inquire zone attribute</string>
-    <string name="inquire_auth_num">inquire authorized numbers</string>
-    <string name="alarm_content">Modify the SMS Alarm Content</string>
-    <string name="zones_info_text">See Manual, section 6.5 - 6.8 for details</string>
-    <string name="alarm_delay">Задержка снятия с охраны, с</string>
+    <string name="make_call">Сделать звонок</string>
+    <string name="remove">Удалить</string>
+    <string name="authorized_number">Авторизованный номер</string>
+    <string name="set_auth_num">Установка авторизованных номеров</string>
+    <string name="remove_auth_num">Удалить авторизованный номер </string>
+    <string name="numbers_info_text">См. инструкцию, раздел 6.2 - 6.4</string>
+    <string name="set_zones">Установка аттрибутов зон</string>
+    <string name="zone_number">Номер зоны</string>
+    <string name="zone_attribute">Код аттрибута</string>
+    <string name="inquire_zone_attribute">Запросить аттрибуты зон</string>
+    <string name="inquire_auth_num">Запросить авторизованные номера</string>
+    <string name="alarm_content">Содержание тревожного SMS</string>
+    <string name="zones_info_text">См. инструкцию, раздел 6.5 - 6.8</string>
+    <string name="alarm_delay">Задержка срабатывания сигнализации, с</string>
     <string name="arm_delay">Задержка постановки на охрану, с</string>
-    <string name="delays_info_text">See Manual, section 6.10, 6.11 for details</string>
-    <string name="siren_time">Siren sound time, sec</string>
-    <string name="siren_info_text">See Manual, section 6.9, 6.x for details</string>
-    <string name="siren_responce">Siren respone to arm operation</string>
+    <string name="delays_info_text">См. инструкцию, раздел 6.10 - 6.11</string>
+    <string name="siren_time">Время работы сирены, с</string>
+    <string name="siren_info_text">См. инструкцию, раздел 6.9, 6.15</string>
+    <string name="siren_responce">Сигнал сирены при постановке на охрану</string>
+    <string name="alert_first_number">Уведомлять первый авториз. номер когда другой номер ставит или снимает</string>
+    <string name="ext_pwr_alert">Задержка уведомления о пропадании питания, мин</string>
+    <string name="auto_report">Интревал автоматичесой отправки статуса, мин (00-отключить)</string>
+    <string name="misc_info_text">См. инструкцию, раздел 6.12, 6.14, 6.15</string>
+    <string name="sim_number">Номер SIM:</string>
+    <string name="request_callback">запросить коллбэк</string>
+    <string name="error_empty">не может быть пустым</string>
+    <string name="error_password">пароль должен содержать 4 символа!</string>
+    <string name="switch_on_siren">Вкл. сирену</string>
+    <string name="switch_off_siren">Выкл. сирену</string>
+    <string name="sending_control_sms">Отправка управляющего SMS...</string>
+    <string name="request_status">Запросить статус</string>
+    <string name="open_object_settings">* открыть свойства обьекта</string>
 
     <string-array name="tab_names">
-        <item>Numbers</item>
-        <item>Zones</item>
-        <item>Delays</item>
-        <item>Siren</item>
-        <item>Miscellaneous</item>
-        <item>Password</item>
+        <item>Номера</item>
+        <item>Зоны</item>
+        <item>Задержки</item>
+        <item>Сирена</item>
+        <item>Разное</item>
+        <item>Пароль</item>
     </string-array>
 
     <string-array name="serial_numbers">
@@ -69,16 +85,16 @@
         <item>6</item>
     </string-array>
 
-    <string-array name="function1">
-        <item>1 - dial and sms</item>
-        <item>2 - only sms</item>
-        <item>3 - only dial</item>
+    <string-array name="function1array">
+        <item>1 - звонок и sms</item>
+        <item>2 - только sms</item>
+        <item>3 - только звонок</item>
     </string-array>
 
-    <string-array name="function2">
-        <item>1 - reject and change to Stay</item>
-        <item>2 - pick up and create voice communication</item>
-        <item>3 - hang up</item>
+    <string-array name="function2array">
+        <item>1 - отклонить вызов и вкл. режим ожидания</item>
+        <item>2 - голосовое соединение</item>
+        <item>3 - нет действий, повесить трубку</item>
     </string-array>
 
     <string-array name="zone_numbers">
@@ -101,21 +117,26 @@
     </string-array>
 
     <string-array name="zone_attribute">
-        <item>0 - entrance</item>
-        <item>1 - outer zones</item>
-        <item>2 - inner zones</item>
-        <item>3 - spot alarm zone</item>
-        <item>4 - 24h emergency zone with sounds</item>
-        <item>5 - 24h emergency silent zone</item>
-        <item>6 - Armed Button</item>
-        <item>7 - Stay Button</item>
-        <item>8 - Disarm Button</item>
-        <item>9 - Door Bell Button</item>
+        <item>0 - вход</item>
+        <item>1 - внешние зоны</item>
+        <item>2 - внутренние зоны</item>
+        <item>3 - полутревожная зона</item>
+        <item>4 - 24ч. тревожная зона с сиреной</item>
+        <item>5 - 24ч. тревожная зона без сирены</item>
+        <item>6 - активирует постановку на охрану</item>
+        <item>7 - активирует режим ожидания</item>
+        <item>8 - активирует снятие с охраны</item>
+        <item>9 - режим дверного звонка</item>
     </string-array>
 
     <string-array name="siren_responce">
-        <item>OFF</item>
-        <item>ON</item>
+        <item>Выкл</item>
+        <item>Вкл</item>
+    </string-array>
+
+    <string-array name="alert_first_number">
+        <item>Выкл</item>
+        <item>Вкл</item>
     </string-array>
 
 
