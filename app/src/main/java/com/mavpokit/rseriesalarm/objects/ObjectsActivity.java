@@ -70,10 +70,7 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
     }
 
     private void setLogo(Toolbar toolbar) {
-        if (Build.VERSION.SDK_INT>=21)
-            toolbar.setLogo(R.drawable.ic_launcher);
-        else
-            toolbar.setLogo(R.mipmap.ic_launcher);
+            toolbar.setLogo(R.drawable.logo_kit_launcher);
     }
 
     private void initFab() {

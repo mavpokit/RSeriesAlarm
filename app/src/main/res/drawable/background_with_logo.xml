@@ -6,6 +6,6 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@drawable/logo_forter_lightgray" />
+            android:src="@drawable/logo_kit_gray" />
     </item>
 </layer-list>

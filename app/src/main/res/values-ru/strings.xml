@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">K2 Alarm</string>
+    <string name="app_name">Kit Alarm</string>
     <string name="action_about">О приложении</string>
     <string name="objectListActivityName">Список обьектов</string>
     <string name="title_activity_add_object">Новый обьект</string>
