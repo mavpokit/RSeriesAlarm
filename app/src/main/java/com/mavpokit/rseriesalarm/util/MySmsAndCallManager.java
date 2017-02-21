@@ -48,7 +48,7 @@ public class MySmsAndCallManager {
         if (ContextCompat.checkSelfPermission(mActivity, Manifest.permission.SEND_SMS)
                 == PackageManager.PERMISSION_GRANTED) {
             SmsManager smsManager = SmsManager.getDefault();
-            smsManager.sendTextMessage(smsNumber, null, alarmObject.getCode()+smsMessage, null, null);
+//            smsManager.sendTextMessage(smsNumber, null, alarmObject.getCode()+smsMessage, null, null);
             Toast.makeText(mActivity, R.string.sending_control_sms, Toast.LENGTH_SHORT).show();
         } else {
             requestSmsPermissionWithRationale();
@@ -65,7 +65,7 @@ public class MySmsAndCallManager {
             String uri = "tel:" + mNumber;
             Intent intent = new Intent(Intent.ACTION_CALL);
             intent.setData(Uri.parse(uri));
-            mActivity.startActivity(intent);
+//            mActivity.startActivity(intent);
         } else {
             requestCallPhonePermissionWithRationale();
         }
