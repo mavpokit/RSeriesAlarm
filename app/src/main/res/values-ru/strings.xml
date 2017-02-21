@@ -2,12 +2,12 @@
     <string name="app_name">R5 Alarm</string>
     <string name="action_about">О приложении</string>
     <string name="objectListActivityName">Список обьектов</string>
-    <string name="title_activity_add_object">Добавление обьекта</string>
+    <string name="title_activity_add_object">Новый обьект</string>
     <string name="title_activity_edit_object">Редактировать обьект</string>
-    <string name="no_objects_text">Нет обеьктов. Для добавления нажмите \"плюс\"</string>
+    <string name="no_objects_text">Нет обьектов. Для добавления нажмите \"плюс\"</string>
     <string name="edit_delete_text">Для редактирования или удаления обекта, долго нажмите на нём</string>
     <string name="objectsTitle">Охраняемые обьекты</string>
-    <string name="object_name">Имя оьекта</string>
+    <string name="object_name">Имя обьекта</string>
     <string name="device_number">Номер SIM карты устройства</string>
     <string name="device_password">Пароль устройста</string>
     <string name="edit_delete_dialog_message">Сделайте выбор</string>
@@ -19,10 +19,9 @@
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="open_settings_explanation_sms">Для отправки команды, нужно включить разрешение на отправку SMS в настройках</string>
     <string name="open_settings_explanation_call">Для звонка на устройство, нужно включить соответствующее разрешение в настройках</string>
-    <string name="open">открыть</string>
+    <string name="open">настройки</string>
     <string name="open_sms_permisssion_explanation">Для отправки команды, нужно включить разрешение на отправку SMS</string>
     <string name="open_call_permisssion_explanation">Для звонка на устройство, нужно включить разрешение на звонки</string>
-    <string name="open_sms_permission_dialog">Open SMS permission dialog</string>
     <string name="ok">Ok</string>
     <string name="sms_denied">Отправка SMS запрещена. Управлящую команду послать невозможно</string>
     <string name="call_denied">Звонки из приложения запрещены</string>
@@ -55,7 +54,7 @@
     <string name="siren_responce">Сигнал сирены при постановке на охрану</string>
     <string name="alert_first_number">Уведомлять первый авториз. номер когда другой номер ставит или снимает</string>
     <string name="ext_pwr_alert">Задержка уведомления о пропадании питания, мин</string>
-    <string name="auto_report">Интревал автоматичесой отправки статуса, мин (00-отключить)</string>
+    <string name="auto_report">Интервал автоматичесой отправки статуса, мин (00-отключить)</string>
     <string name="misc_info_text">См. инструкцию, раздел 6.12, 6.14, 6.15</string>
     <string name="sim_number">Номер SIM:</string>
     <string name="request_callback">запросить коллбэк</string>

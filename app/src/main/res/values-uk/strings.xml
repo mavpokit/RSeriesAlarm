@@ -1,0 +1,142 @@
+<resources>
+    <string name="app_name">R5 Alarm</string>
+    <string name="action_about">Про додаток</string>
+    <string name="objectListActivityName">Список об\'єктів</string>
+    <string name="title_activity_add_object">Новий об\'єкт</string>
+    <string name="title_activity_edit_object">Редагування об\'єкту</string>
+    <string name="no_objects_text">Об\'єкти відсутні. Для створення нажміть \"плюс\"</string>
+    <string name="edit_delete_text">Для редагування або видалення об\'єкту, довго нажміть на ньому</string>
+    <string name="objectsTitle">Об\'єкти під охороною</string>
+    <string name="object_name">Ім\'я об\'єкту</string>
+    <string name="device_number">Номер SIM карти пристрою</string>
+    <string name="device_password">Пароль пристрою</string>
+    <string name="edit_delete_dialog_message">Зробіть вибір</string>
+    <string name="edit">Редагувати</string>
+    <string name="delete">Видалити</string>
+    <string name="cancel">Відміна</string>
+    <string name="arm">Поставити на охорону</string>
+    <string name="disarm">Зняти з охорони</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="open_settings_explanation_sms">Для відправки команди, необхідно включити дозвіл на відправку SMS в настройках</string>
+    <string name="open_settings_explanation_call">Для дзвінка на пристрій, необхідно включити відповідний дозвіл в настройках</string>
+    <string name="open">настройки</string>
+    <string name="open_sms_permisssion_explanation">Для відправки команди, необхідно включити дозвіл на відправку SMS</string>
+    <string name="open_call_permisssion_explanation">Для дзвінка на пристрій, необхідно включити дозвіл на дзвінки</string>
+    <string name="ok">Ok</string>
+    <string name="sms_denied">відправка SMS заборонена. Команду відправити неможливо</string>
+    <string name="call_denied">Дзвінки з додатку заборонені</string>
+    <string name="about">Про додаток</string>
+    <string name="about_title">Про додаток</string>
+    <string name="about_message">\tСтворено Mavpokit-ом\n\twww.mavpokit.com</string>
+    <string name="setup">Налаштування</string>
+    <string name="new_password">Введіть новий пароль пристрою. Після SMS підтвердження від пристрою, не забудьте змінити пароль у налаштуваннях об\'єкту *</string>
+    <string name="serial_number">Серійний номер</string>
+    <string name="function1">Дія при спрацюванні сигналізації</string>
+    <string name="function2">Дія при дзвінку на пристрій</string>
+    <string name="make_call">Зробити дзвінок</string>
+    <string name="remove">Видалити</string>
+    <string name="authorized_number">Авторизований номер</string>
+    <string name="set_auth_num">Налаштування авторизованих номерів</string>
+    <string name="remove_auth_num">Видалити авторизований номер </string>
+    <string name="numbers_info_text">Див. інструкцію, розділ 6.2 - 6.4</string>
+    <string name="set_zones">Встановлення аттрибутів зон</string>
+    <string name="zone_number">Номер зони</string>
+    <string name="zone_attribute">Код аттрибута</string>
+    <string name="inquire_zone_attribute">Запросити аттрибути зон</string>
+    <string name="inquire_auth_num">Запросити авторизовані номери</string>
+    <string name="alarm_content">Зміст тревожного SMS</string>
+    <string name="zones_info_text">Див. інструкцію, розділ 6.5 - 6.8</string>
+    <string name="alarm_delay">Затримка спрацювання сигналізації, с</string>
+    <string name="arm_delay">Затримка постановки на охорону, с</string>
+    <string name="delays_info_text">Див. інструкцію, розділ 6.10 - 6.11</string>
+    <string name="siren_time">Час роботи сирени, с</string>
+    <string name="siren_info_text">Див. інструкцію, розділ 6.9, 6.15</string>
+    <string name="siren_responce">Сигнал сирени при постановці на охорону</string>
+    <string name="alert_first_number">Повідомляти перший авториз. номер коли інший номер ставить або знімає</string>
+    <string name="ext_pwr_alert">Затримка повідомлення про зникнення живлення, хв</string>
+    <string name="auto_report">Інтревал автоматичної вітправки статуса, хв (00-відключити)</string>
+    <string name="misc_info_text">Див. інструкцію, розділ 6.12, 6.14, 6.15</string>
+    <string name="sim_number">Номер SIM:</string>
+    <string name="request_callback">запросити коллбек</string>
+    <string name="error_empty">не може бути порожнім</string>
+    <string name="error_password">пароль повинен мати 4 символи!</string>
+    <string name="switch_on_siren">Увімк. сирену</string>
+    <string name="switch_off_siren">Вимк. сирену</string>
+    <string name="sending_control_sms">Відправка керуючого SMS...</string>
+    <string name="request_status">Запросити статус</string>
+    <string name="open_object_settings">* відкрити налаштування об\'єкту</string>
+
+    <string-array name="tab_names">
+        <item>Номери</item>
+        <item>Зони</item>
+        <item>Затримки</item>
+        <item>Сирена</item>
+        <item>Різне</item>
+        <item>Пароль</item>
+    </string-array>
+
+    <string-array name="serial_numbers">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
+    <string-array name="function1array">
+        <item>1 - дзвінок і sms</item>
+        <item>2 - тільки sms</item>
+        <item>3 - тільки дзвінок</item>
+    </string-array>
+
+    <string-array name="function2array">
+        <item>1 - відхилити виклик і вкл. режим очікування</item>
+        <item>2 - голосове з\'єднання</item>
+        <item>3 - нема дій, повісити трубку</item>
+    </string-array>
+
+    <string-array name="zone_numbers">
+        <item>00</item>
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+    </string-array>
+
+    <string-array name="zone_attribute">
+        <item>0 - вхід</item>
+        <item>1 - зовнішні зони</item>
+        <item>2 - внутрішні зони</item>
+        <item>3 - напівривожна зона</item>
+        <item>4 - 24г. тривожна зона із сиреною</item>
+        <item>5 - 24г. тривожна зона без сирены</item>
+        <item>6 - активує постановку на охорону</item>
+        <item>7 - активує режим очікування</item>
+        <item>8 - активує зняття з охорони</item>
+        <item>9 - режим дверного дзвінка</item>
+    </string-array>
+
+    <string-array name="siren_responce">
+        <item>Вимк</item>
+        <item>Увімк</item>
+    </string-array>
+
+    <string-array name="alert_first_number">
+        <item>Вимк</item>
+        <item>Увімк</item>
+    </string-array>
+
+
+</resources>

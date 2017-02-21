@@ -28,7 +28,7 @@
             android:label="@string/title_activity_add_object"
             android:parentActivityName=".objects.ObjectsActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="adjustPan">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.mavpokit.rseriesalarm.objects.ObjectsActivity" />
