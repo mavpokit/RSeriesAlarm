@@ -38,10 +38,7 @@ public class Repository implements IRepository {
     @Override
     public List<AlarmObject> getObjects() {
         Logger.log("-----repository-----: ","loading objects...");
-        delay(1000);
-
         return sqliteDatasource.getObjects();
-//        return alarmObjects;
     }
 
     private void delay(int ms) {
