@@ -46,6 +46,7 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        delay(300);
         setTheme(R.style.AppTheme_NoActionBar);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_objects);
@@ -60,6 +61,14 @@ public class ObjectsActivity extends AppCompatActivity implements ObjectsContrac
         presenter.onCreate();
 
         Logger.log("---ObjectsActivity---: ","onCreate");
+    }
+
+    private void delay(int i) {
+        try {
+            Thread.sleep(i);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     private void setupToolbar() {
